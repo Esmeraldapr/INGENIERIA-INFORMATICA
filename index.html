@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INGENIERÍA INFORMÁTICA</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --success: #27ae60;
+            --error: #e74c3c;
+            --bg: #f4f7f6;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        .header-info { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px; font-weight: bold; position: sticky; top: 0; background: white; z-index: 100; padding-top: 10px;}
+        #timer { color: var(--error); font-size: 1.2rem; }
+
+        #login-section { text-align: center; padding: 20px 0; }
+        
+        /* Bloque de Materias */
+        .subject-block { background: #fdfdfd; border: 2px solid #e1e8ed; border-radius: 12px; padding: 25px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        .subject-title { color: var(--primary); font-size: 1.5rem; margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid var(--secondary); text-align: left; display: flex; align-items: center; gap: 10px;}
+        
+        /* Grid de Temas */
+        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .topic-card { background: var(--secondary); color: white; padding: 15px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; font-weight: bold; transition: 0.3s; border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .topic-card:hover { background: #2980b9; transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .topic-all { background: var(--primary); }
+        .topic-all:hover { background: #1a252f; }
+
+        .btn-main { padding: 12px 25px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem; font-weight: bold; transition: 0.3s; width: 100%; margin-top: 30px;}
+        .btn-main:hover { background: #1a252f; }
+        .btn-danger { background: var(--error); width: auto; margin-top: 10px; font-size: 0.9rem; padding: 8px 15px;}
+        .btn-danger:hover { background: #c0392b; }
+
+        /* Estilos de las preguntas */
+        .question-block { background: #fff; border: 1px solid #e1e8ed; border-radius: 10px; padding: 25px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .question-header { color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 8px; margin-bottom: 15px; font-size: 1.1rem; }
+        .question-text { font-size: 1.3rem; font-weight: 600; margin-bottom: 20px; }
+        
+        .options-container { display: grid; gap: 12px; margin-top: 20px; }
+        .option-btn { 
+            padding: 15px; border: 2px solid #ddd; border-radius: 8px; cursor: pointer; 
+            transition: all 0.2s; background: white; text-align: left; font-size: 1.05rem;
+        }
+        .option-btn:hover:not(:disabled) { background: #f8f9fa; border-color: var(--secondary); }
+        
+        .correct { background-color: var(--success) !important; color: white; border-color: var(--success); }
+        .wrong { background-color: var(--error) !important; color: white; border-color: var(--error); }
+        
+        .explanation { margin-top: 20px; padding: 15px; background: #e8f4fd; border-left: 5px solid var(--secondary); display: none; border-radius: 4px; line-height: 1.5; }
+
+        /* --- Estilos para el Gráfico Donut --- */
+        .gauge-container { display: flex; justify-content: center; margin: 30px 0; }
+        .gauge-outer { 
+            width: 180px; height: 180px; border-radius: 50%; 
+            background: conic-gradient(var(--success) 0%, var(--error) 0); 
+            display: flex; align-items: center; justify-content: center; position: relative; 
+        }
+        .gauge-outer::after { 
+            content: ''; width: 130px; height: 130px; border-radius: 50%; 
+            background: white; position: absolute; 
+        }
+        .gauge-inner { z-index: 1; text-align: center; }
+        #score-text { font-size: 2.5rem; font-weight: bold; color: var(--primary); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="login-section">
+        <h1 style="color: var(--primary);">OPOSICIÓN TAI</h1>
+        <p>Selecciona el bloque que deseas practicar para comenzar directamente.</p>
+        
+        <button class="btn-main btn-danger" onclick="resetProgress()">🗑️ Borrar mi progreso</button>
+        <button class="btn-main" style="background: #e67e22; margin-top: 10px;" onclick="startFailedQuestionsTest()">
+            ❌ Repasar mis fallos (<span id="failed-count">0</span>)
+        </button>
+
+        <div id="subjects-container" style="margin-top: 30px;"></div>
+    </div>
+
+    <div id="test-section" style="display:none;">
+        <div class="header-info">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button onclick="goBackToMenu()" style="padding: 6px 12px; border: none; border-radius: 6px; background: var(--secondary); color: white; font-weight: bold; cursor: pointer;">🔙 Volver</button>
+                <div> 📚  <span id="display-topic"></span></div>
+            </div>
+            <div id="timer"> ⏱️  00:00</div>
+        </div>
+
+        <div id="questions-list"></div>
+        
+        <button id="finish-btn" class="btn-main" onclick="finishTest()">Finalizar Test ➔</button>
+    </div>
+
+    <div id="results-section" style="text-align: center; display: none; padding: 40px 0;">
+        <h2 style="color: var(--primary);">¡Test Finalizado! 🎉</h2>
+        
+        <div class="gauge-container">
+            <div class="gauge-outer" id="gauge-chart">
+                <div class="gauge-inner">
+                    <span id="score-text">0/0</span>
+                </div>
+            </div>
+        </div>
+
+        <p id="results-detail-text" style="font-size: 1.2rem; margin-bottom: 30px;"></p>
+        <button class="btn-main" onclick="goBackToMenu()">  ↻  Volver al Menú Principal</button>
+    </div>
+</div>
+
+<script>
+    const misPreguntas = [
+      
+// =========================================================================
+    // PEGUNTAS   
+    // =========================================================================
+      // =========================================================================
+// E en M: 4º CURSO
+// T: Software Libre y de Código Abierto
+// U: EXAMEN ORDINARIA 1
+// =========================================================================
+
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál de los siguientes términos hace referencia a la versión de programa de pago que se distribuye de forma gratuita por un periodo de tiempo?",
+    r: ["Freeware.", "Copyleft.", "Warez.", "Trial."],
+    c: "Trial.",
+    e: "Las versiones Trial (de prueba) permiten el uso completo del software por un tiempo limitado (ej. 30 días) para incentivar la compra.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "El término ________ es usado por la Free Software Foundation para nombrar todo el software que no es libre: incluye al software semilibre y al propietary software.",
+    r: ["libre", "no privado", "no libre", "aleatorio"],
+    c: "no libre",
+    e: "La FSF utiliza 'no libre' para englobar cualquier software que no respete las cuatro libertades fundamentales.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cómo se conoce al coste derivado de la compra del software y hardware necesarios para satisfacer los objetivos solicitados?",
+    r: ["Coste de migración.", "Coste derivado del hardware.", "Coste de adquisición.", "Coste de uso."],
+    c: "Coste de adquisición.",
+    e: "El coste de adquisición es el desembolso inicial para obtener los recursos técnicos necesarios.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál de los siguientes no es un tipo de versión de desarrollo en Debian?",
+    r: ["Depuración.", "Estable.", "En pruebas.", "Inestable."],
+    c: "Depuración.",
+    e: "Debian utiliza los estados 'Stable', 'Testing' y 'Unstable' (Sid). 'Depuración' no es una rama de distribución.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál de los siguientes no es un sistema operativo BSD libre?",
+    r: ["FreeBSD.", "NetBSD.", "OpenBSD.", "SourceBSD."],
+    c: "SourceBSD.",
+    e: "Los tres grandes BSD libres son FreeBSD, NetBSD y OpenBSD. SourceBSD no existe como rama principal.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "Indica el orden cronológico correcto (de más antiguo a más actual) de los hechos más importantes del software:",
+    r: [
+        "Aparición de ARPANET -> lanzamiento de LINUX -> nacimiento de Unix -> proyecto GNU.",
+        "Proyecto GNU -> lanzamiento de LINUX -> nacimiento de Unix -> aparición de ARPANET.",
+        "Proyecto GNU -> nacimiento de Unix -> aparición de ARPANET -> lanzamiento de Linux.",
+        "Aparición de ARPANET -> nacimiento de Unix -> proyecto GNU -> lanzamiento de LINUX."
+    ],
+    c: "Aparición de ARPANET -> nacimiento de Unix -> proyecto GNU -> lanzamiento de LINUX.",
+    e: "Orden: ARPANET (1969), Unix (1970), GNU (1983), Linux (1991).",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "La sigla PISA, en el ámbito de los sistemas operativos en red, significa:",
+    r: ["Packet interface software abierto.", "Protocol injection source algoritm.", "Protocol independent switch architecture.", "Packet index signal atribute."],
+    c: "Protocol independent switch architecture.",
+    e: "PISA es un modelo que permite procesar paquetes independientemente del protocolo en el hardware de red.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál de las siguientes distribuciones no es Linux?",
+    r: ["GNOME.", "Debian.", "Fedora.", "Suse."],
+    c: "GNOME.",
+    e: "GNOME es un entorno de escritorio, no una distribución de sistema operativo (kernel + herramientas).",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Qué estrategias en el mundo del software libre son usadas por empresas?",
+    r: [
+        "Esponsorización y apadrinamiento, recolectas masivas, captura de cerebros, y captura de proyectos.",
+        "Esponsorización y apadrinamiento, liberalización del software, captura de cerebros, y captura de proyectos.",
+        "Esponsorización y apadrinamiento, liberalización del código, captura de cerebros, y fondos de inversión.",
+        "Esponsorización y apadrinamiento, liberalización del código, captura de cerebros, y trabajo en equipo."
+    ],
+    c: "Esponsorización y apadrinamiento, liberalización del software, captura de cerebros, y captura de proyectos.",
+    e: "Las empresas suelen liberar software propio, financiar proyectos existentes o contratar a desarrolladores clave (cerebros).",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál es la nube de Microsoft?",
+    r: ["GCP.", "OpenStack.", "Azure.", "AWS."],
+    c: "Azure.",
+    e: "Azure es la plataforma de computación en la nube de Microsoft.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Qué diferencia existe entre la propiedad industrial y la propiedad intelectual?",
+    r: [
+        "La propiedad intelectual es sobre conocimiento; y la industrial, sobre patentes maquinaria.",
+        "La propiedad intelectual está relacionada con derechos de autor; y la industrial, sobre las restantes figuras englobando a la intelectual.",
+        "La propiedad intelectual está relacionada con derechos de autor; y la industrial, sobre patentes de maquinaria.",
+        "La propiedad intelectual no es material; y la industrial, sí es material."
+    ],
+    c: "La propiedad intelectual está relacionada con derechos de autor; y la industrial, sobre patentes de maquinaria.",
+    e: "La propiedad intelectual protege obras literarias y artísticas; la industrial protege invenciones, marcas y diseños.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Qué característica no se espera de un sistema operativo moderno GNU/Linux, según lo estudiado en el temario?",
+    r: ["Multitarea.", "Multilenguaje.", "Multiplataforma.", "Multiusuario."],
+    c: "Multilenguaje.",
+    e: "Aunque GNU/Linux soporta muchos idiomas, las características fundamentales de diseño son Multitarea, Multiplataforma y Multiusuario.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Qué afirmación de las siguientes sobre la PaaS es correcta?",
+    r: [
+        "Este modelo usa recursos de IaaS para ofrecer entornos concretos en el desarrollo de aplicaciones en la nube.",
+        "Este servicio es el que se encuentra más cerca del hardware, y los recursos más comunes que ofrece son la CPU, la memoria y el almacenamiento.",
+        "Este modelo se basa en el concepto de que su producto de datos se puede proporcionar al usuario bajo demanda.",
+        "En este servicio los suscriptores pueden alquilar almacenamiento de los proveedores."
+    ],
+    c: "Este modelo usa recursos de IaaS para ofrecer entornos concretos en el desarrollo de aplicaciones en la nube.",
+    e: "PaaS (Platform as a Service) proporciona la plataforma para desarrollar y desplegar apps sin gestionar la infraestructura subyacente.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "Una suite de internet que contiene un navegador web, cliente de correo electrónico, etc., es conocida como:",
+    r: ["Firefox.", "SeaMonkey.", "SeaFox.", "FireMonkey."],
+    c: "SeaMonkey.",
+    e: "SeaMonkey es la suite de código abierto que continúa el legado de la antigua Mozilla Suite.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "SNAS (Streaming Network Analytics System) monitoriza principalmente sesiones de routers mediante el protocolo:",
+    r: ["RIP.", "OSPF.", "BGP.", "EIGRP."],
+    c: "BGP.",
+    e: "SNAS está diseñado para el análisis masivo de datos de rutas BGP (Border Gateway Protocol).",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Qué tipo de fichero de configuración se utiliza en Prometheus?",
+    r: ["JSON.", "YAML.", "CSV.", "TXT."],
+    c: "YAML.",
+    e: "YAML es el formato estándar para la configuración en Prometheus y muchas herramientas de monitorización modernas.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál de los siguientes CMS no existe?",
+    r: ["Wordpress.", "Jungla.", "Drupal.", "Contao."],
+    c: "Jungla.",
+    e: "El CMS se llama Joomla, no Jungla. WordPress, Drupal y Contao son CMS reales.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Qué sistema de dominio público permite crear presentaciones de diapositivas completas en un único fichero HTML basado en estándares (XHTML, CSS y JavaScript)?",
+    r: ["F5.", "D5.", "S5.", "Scribus."],
+    c: "S5.",
+    e: "S5 (Simple Standards-Based Slide Show System) permite hacer presentaciones usando solo tecnologías web estándar.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál de las siguientes no es una herramienta para facilitar la gestión de servicios en la nube y entornos virtualizados?",
+    r: ["ONAP (Open Network Automation Platform).", "MANO (Management and Orchestration).", "Stratum.", "IETF."],
+    c: "IETF.",
+    e: "IETF es un organismo de estandarización, no una plataforma o herramienta de software para gestión de la nube.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál es la principal desventaja de utilizar el navegador web Mozilla Firefox?",
+    r: [
+        "Es multiplataforma.",
+        "Mozilla Firefox es un navegador web de código abierto y software libre.",
+        "Permite una navegación bastante fluida.",
+        "Existen sitios web que no están optimizados para Firefox (ej. código exclusivo ActiveX)."
+    ],
+    c: "Existen sitios web que no están optimizados para Firefox (ej. código exclusivo ActiveX).",
+    e: "La incompatibilidad con tecnologías propietarias antiguas de Microsoft ha sido históricamente una de sus desventajas.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "El término FLOSS hace referencia...",
+    r: [
+        "al nombre de una de las distribuciones gratuitas de Linux.",
+        "... al acrónimo de free/libre open source software.",
+        "a una distribución de Linux utilizada como recurso educativo.",
+        "... al acrónimo de free/languaje operating system software."
+    ],
+    c: "... al acrónimo de free/libre open source software.",
+    e: "FLOSS une los conceptos de Free Software y Open Source Software.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Qué persona creó Linux en el año 1991?",
+    r: ["Torvalds.", "Bill Gates.", "Steve Jobs.", "Elon Musk."],
+    c: "Torvalds.",
+    e: "Linus Torvalds lanzó el kernel Linux en 1991 como un proyecto personal.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál de las siguientes herramientas relacionadas con la automatización de redes está basada en el fichero YAML y los playbooks?",
+    r: ["Terraform.", "Ansible.", "Pupplet.", "Github."],
+    c: "Ansible.",
+    e: "Ansible utiliza ficheros YAML para definir sus 'playbooks' de configuración y automatización.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál es el número de libertades que define el software libre?",
+    r: ["4.", "3.", "2.", "1."],
+    c: "4.",
+    e: "Son 4 libertades: libertad 0 (usar), 1 (estudiar/modificar), 2 (distribuir copias) y 3 (mejorar y publicar).",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "La definición de GNUCash es:",
+    r: [
+        "Un programa de Entorno ERP de gran nivel para Linux.",
+        "Un completísimo entorno de reproducción de contenidos multimedia.",
+        "Un programa de contabilidad GPL para manejar finanzas personales o de pequeñas empresas.",
+        "Un reproductor de vídeo GPL para sistemas X11."
+    ],
+    c: "Un programa de contabilidad GPL para manejar finanzas personales o de pequeñas empresas.",
+    e: "GNUCash es una herramienta financiera personal y de pequeña empresa bajo licencia libre.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál es la función principal del kernel Linux dentro de un sistema operativo GNU/Linux?",
+    r: [
+        "Proporcionar una interfaz gráfica de usuario completa.",
+        "Gestionar el hardware y ofrecer servicios básicos a los programas.",
+        "Almacenar permanentemente todos los archivos del sistema.",
+        "Actuar como navegador web para acceder a internet."
+    ],
+    c: "Gestionar el hardware y ofrecer servicios básicos a los programas.",
+    e: "El kernel es el núcleo del sistema que actúa de puente entre el hardware y el software.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Cuál es el principal objetivo del proyecto de código abierto GNOME?",
+    r: [
+        "Crear un sistema de comunicaciones globales P2P.",
+        "Crear un sistema de códecs de reproducción para el usuario final.",
+        "Crear un sistema de ficheros compartidos.",
+        "Crear un sistema de escritorio para el usuario final que sea libre, completo y fácil de usar."
+    ],
+    c: "Crear un sistema de escritorio para el usuario final que sea libre, completo y fácil de usar.",
+    e: "GNOME es un entorno de escritorio diseñado para proporcionar una interfaz intuitiva y libre.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Qué no se puede gestionar mediante los controladores SDN (software-defined networking) open source?",
+    r: ["Historial de registros.", "Control de flujos.", "Orquestación de recursos.", "Implementación de políticas de red."],
+    c: "Historial de registros.",
+    e: "Aunque el SDN puede generar logs, su función central no es la gestión del historial, sino el control dinámico de la red (flujos, orquestación y políticas).",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Qué ventaja principal ofrece el software libre en proyectos de computación cuántica frente al software propietario?",
+    r: [
+        "El software libre facilita la colaboración abierta sobre algoritmos y simuladores cuánticos.",
+        "El software libre garantiza que todos los programas cuánticos sean automáticamente más rápidos.",
+        "El software libre permite ocultar los algoritmos cuánticos.",
+        "El software libre obliga a usar un único proveedor de hardware cuántico."
+    ],
+    c: "El software libre facilita la colaboración abierta sobre algoritmos y simuladores cuánticos.",
+    e: "La apertura del código permite a la comunidad científica validar y mejorar algoritmos complejos sin restricciones de licencia.",
+},
+{
+    m: "4º CURSO", t: "Software Libre y de Código Abierto", u: "EXAMEN ORDINARIA 1",
+    p: "¿Qué sistema operativo de los siguientes no funciona en los PC?",
+    r: ["ReactOS.", "FreeDOS.", "Chrome OS.", "Kaiku."],
+    c: "Kaiku.",
+    e: "Kaiku no es un sistema operativo compatible con la arquitectura de PC estándar. Los otros tres sí están diseñados para ello.",
+}
+
+];
+
+    // ==========================================
+    // VARIABLES GLOBALES
+    // ==========================================
+    let currentQuestions = [];
+    let answeredStatus = {};
+    let startTime, timerInterval;
+    let selectedSubject = "";
+    let selectedCategory = "";
+    let selectedTopicName = "";
+
+    // ==========================================
+    // INICIALIZACIÓN Y CREACIÓN DEL MENÚ
+    // ==========================================
+    window.onload = function() {
+        const container = document.getElementById('subjects-container');
+        container.innerHTML = ''; // Limpiar el contenedor para evitar duplicados al recargar
+        
+        const subjects = [...new Set(misPreguntas.map(q => q.m))];
+        const completedTests = JSON.parse(localStorage.getItem('completed_tests_v5') || '[]');
+        
+        subjects.forEach(subject => {
+            const subjectQuestions = misPreguntas.filter(q => q.m === subject);
+            const categories = [...new Set(subjectQuestions.map(q => q.t))];
+            
+            const subjectDiv = document.createElement('div');
+            subjectDiv.className = 'subject-block';
+            
+            const title = document.createElement('h2');
+            title.className = 'subject-title';
+            title.innerHTML = ` 📘 ${subject}`;
+            subjectDiv.appendChild(title);
+            
+            const grid = document.createElement('div');
+            grid.className = 'topics-grid';
+            
+            categories.forEach(category => {
+                const categoryQuestions = subjectQuestions.filter(q => q.t === category);
+                const topics = [...new Set(categoryQuestions.map(q => q.u))];
+                
+                if (topics.length === 1) {
+                    const btn = document.createElement('button');
+                    btn.className = 'topic-card';
+                    const testId = `${subject}-${category}-${topics[0]}`;
+                    btn.setAttribute('data-testid', testId);
+                    
+                    if (completedTests.includes(testId)) {
+                        btn.innerText = `${category} ✅ `;
+                        btn.style.background = '#27ae60';
+                    } else {
+                        btn.innerText = category;
+                    }
+                    
+                    btn.onclick = () => startTest(subject, category, topics[0]);
+                    btn.oncontextmenu = (e) => { e.preventDefault(); uncheckTest(testId); };
+                    grid.appendChild(btn);
+                } else {
+                    const wrapper = document.createElement('div');
+                    wrapper.style.display = "flex";
+                    wrapper.style.flexDirection = "column";
+                    wrapper.style.gap = "10px";
+                    
+                    const btnCat = document.createElement('button');
+                    btnCat.className = 'topic-card';
+                    btnCat.style.background = 'var(--primary)';
+                    btnCat.innerHTML = ` 📂 ${category} ▼ `;
+                    
+                    const subGrid = document.createElement('div');
+                    subGrid.style.display = 'none';
+                    subGrid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(140px, 1fr))';
+                    subGrid.style.gap = '10px';
+                    subGrid.style.padding = '15px';
+                    subGrid.style.background = '#e1e8ed';
+                    subGrid.style.borderRadius = '8px';
+                    
+                    btnCat.onclick = () => {
+                        if (subGrid.style.display === 'none') {
+                            subGrid.style.display = 'grid';
+                            btnCat.innerHTML = ` 📂 ${category} ▲ `;
+                        } else {
+                            subGrid.style.display = 'none';
+                            btnCat.innerHTML = ` 📂 ${category} ▼ `;
+                        }
+                    };
+                    
+                    topics.forEach(topic => {
+                        const btnTop = document.createElement('button');
+                        btnTop.className = 'topic-card';
+                        btnTop.style.fontSize = '1rem';
+                        btnTop.style.padding = '10px';
+                        
+                        const testId = `${subject}-${category}-${topic}`;
+                        btnTop.setAttribute('data-testid', testId);
+                        
+                        if (completedTests.includes(testId)) {
+                            btnTop.innerText = `${topic} ✅ `;
+                            btnTop.style.background = '#27ae60';
+                        } else {
+                            btnTop.innerText = topic;
+                        }
+                        
+                        btnTop.onclick = () => startTest(subject, category, topic);
+                        btnTop.oncontextmenu = (e) => { e.preventDefault(); uncheckTest(testId); };
+                        subGrid.appendChild(btnTop);
+                    });
+                    
+                    const btnAll = document.createElement('button');
+                    btnAll.className = 'topic-card';
+                    btnAll.style.fontSize = '1rem';
+                    btnAll.style.padding = '10px';
+                    btnAll.style.background = 'var(--primary)';
+                    
+                    const allId = `${subject}-${category}-Todos`;
+                    btnAll.setAttribute('data-testid', allId);
+                    
+                    if (completedTests.includes(allId)) {
+                        btnAll.innerText = `Todo el bloque ✅ `;
+                        btnAll.style.background = '#27ae60';
+                    } else {
+                        btnAll.innerText = `Todo el bloque`;
+                    }
+                    
+                    btnAll.onclick = () => startTest(subject, category, 'Todos');
+                    btnAll.oncontextmenu = (e) => { e.preventDefault(); uncheckTest(allId); };
+                    subGrid.appendChild(btnAll);
+                    
+                    wrapper.appendChild(btnCat);
+                    wrapper.appendChild(subGrid);
+                    grid.appendChild(wrapper);
+                }
+            });
+            
+            const btnSubjectAll = document.createElement('button');
+            btnSubjectAll.className = 'topic-card topic-all';
+            
+            const subjAllId = `${subject}-Global-Todos`;
+            btnSubjectAll.setAttribute('data-testid', subjAllId);
+            
+            if (completedTests.includes(subjAllId)) {
+                btnSubjectAll.innerText = `Toda la materia ✅ `;
+                btnSubjectAll.style.background = '#27ae60';
+            } else {
+                btnSubjectAll.innerText = `Toda la materia`;
+            }
+            
+            btnSubjectAll.onclick = () => startTest(subject, 'Global', 'Todos');
+            btnSubjectAll.oncontextmenu = (e) => { e.preventDefault(); uncheckTest(subjAllId); };
+            grid.appendChild(btnSubjectAll);
+            
+            subjectDiv.appendChild(grid);
+            container.appendChild(subjectDiv);
+        });
+        
+        // Mostrar número de preguntas falladas al cargar el menú
+        updateFailedCount();
+    };
+
+    function uncheckTest(testId) {
+        if(confirm(`¿Quieres quitar el check de completado de este tema?`)) {
+            let completed = JSON.parse(localStorage.getItem('completed_tests_v5') || '[]');
+            completed = completed.filter(id => id !== testId);
+            localStorage.setItem('completed_tests_v5', JSON.stringify(completed));
+            window.onload(); 
+        }
+    }
+
+    // ==========================================
+    // CONTROL DEL BOTÓN "ATRÁS" DEL MÓVIL/NAVEGADOR
+    // ==========================================
+    history.replaceState({page: 'menu'}, "Menú", "");
+
+    window.addEventListener('popstate', function(event) {
+        if (event.state && event.state.page === 'menu') {
+            document.getElementById('results-section').style.display = 'none';
+            document.getElementById('test-section').style.display = 'none';
+            document.getElementById('login-section').style.display = 'block';
+            if (typeof timerInterval !== 'undefined') clearInterval(timerInterval);
+            updateCheckmarks();
+            updateFailedCount();
+            window.scrollTo(0,0);
+        }
+    });
+
+    // ==========================================
+    // FUNCIONES DE LÓGICA DEL TEST
+    // ==========================================
+    function startTest(subject, category, topic) {
+        selectedSubject = subject;
+        selectedCategory = category;
+        selectedTopicName = topic;
+        
+        if (category === 'Global') {
+            document.getElementById('display-topic').innerText = `${subject} (Test Global)`;
+            currentQuestions = misPreguntas.filter(q => q.m === subject);
+        } else if (topic === 'Todos') {
+            document.getElementById('display-topic').innerText = `${subject} - ${category}`;
+            currentQuestions = misPreguntas.filter(q => q.m === subject && q.t === category);
+        } else {
+            let isSimple = misPreguntas.filter(q => q.m === subject && q.t === category).map(q => q.u).length === 1;
+            document.getElementById('display-topic').innerText = isSimple ? `${subject} - ${category}` : `${subject} - ${topic}`;
+            currentQuestions = misPreguntas.filter(q => q.m === subject && q.t === category && q.u === topic);
+        }
+        
+        document.getElementById('login-section').style.display = 'none';
+        document.getElementById('test-section').style.display = 'block';
+        
+        // Empujamos el estado al historial para que el botón "Atrás" físico del móvil funcione
+        history.pushState({page: 'test'}, "Test", "");
+        
+        startTime = new Date();
+        timerInterval = setInterval(updateTimer, 1000);
+        
+        shuffleArray(currentQuestions);
+        renderAllQuestions();
+        
+        window.scrollTo(0,0);
+    }
+
+    function updateTimer() {
+        const diff = Math.floor((new Date() - startTime) / 1000);
+        document.getElementById('timer').innerText = ` ⏱️  ${Math.floor(diff / 60).toString().padStart(2, '0')}:${(diff % 60).toString().padStart(2, '0')}`;
+    }
+
+    function renderAllQuestions() {
+        const container = document.getElementById('questions-list');
+        container.innerHTML = '';
+        answeredStatus = {};
+        
+        currentQuestions.forEach((q, index) => {
+            let options = [...q.r];
+            shuffleArray(options);
+            
+            const qBlock = document.createElement('div');
+            qBlock.className = 'question-block';
+            
+            const qText = document.createElement('div');
+            qText.className = 'question-text';
+            qText.innerText = `${index + 1}/${currentQuestions.length}. ${q.p}`;
+            qBlock.appendChild(qText);
+            
+            const optionsContainer = document.createElement('div');
+            optionsContainer.className = 'options-container';
+            optionsContainer.id = `options-${index}`;
+            
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.innerText = opt;
+                // Pasamos q.p para guardar la pregunta si la falla
+                btn.onclick = function() { checkAnswer(this, index, opt, q.c, q.e, q.p); };
+                optionsContainer.appendChild(btn);
+            });
+            
+            qBlock.appendChild(optionsContainer);
+            
+            const expl = document.createElement('div');
+            expl.id = `explanation-${index}`;
+            expl.className = 'explanation';
+            qBlock.appendChild(expl);
+            
+            container.appendChild(qBlock);
+        });
+    }
+
+    function checkAnswer(btn, index, selected, correct, info, questionText) {
+        if (answeredStatus[index] !== undefined) return;
+        const optionsContainer = document.getElementById(`options-${index}`);
+        const buttons = optionsContainer.querySelectorAll('.option-btn');
+        buttons.forEach(b => b.disabled = true);
+        
+        let failedQuestions = JSON.parse(localStorage.getItem('preguntas_falladas') || '[]');
+        
+        if (selected === correct) {
+            btn.classList.add('correct');
+            answeredStatus[index] = true;
+            
+            // Si la acierta y estaba en los fallos, la borramos
+            if (failedQuestions.includes(questionText)) {
+                failedQuestions = failedQuestions.filter(q => q !== questionText);
+                localStorage.setItem('preguntas_falladas', JSON.stringify(failedQuestions));
+                updateFailedCount();
+            }
+        } else {
+            btn.classList.add('wrong');
+            answeredStatus[index] = false;
+            buttons.forEach(b => {
+                if(b.innerText === correct) b.classList.add('correct');
+            });
+            
+            // Si la falla y NO estaba ya en la lista, la guardamos
+            if (!failedQuestions.includes(questionText)) {
+                failedQuestions.push(questionText);
+                localStorage.setItem('preguntas_falladas', JSON.stringify(failedQuestions));
+                updateFailedCount();
+            }
+        }
+        
+        if (info && info.trim() !== "") {
+            const eb = document.getElementById(`explanation-${index}`);
+            eb.innerHTML = `<strong> 💡 Aclaración:</strong> ${info}`;
+            eb.style.display = 'block';
+        }
+    }
+
+    function finishTest() {
+        const totalQuestions = currentQuestions.length;
+        const totalAnswered = Object.keys(answeredStatus).length;
+        
+        if (totalAnswered < totalQuestions) {
+            if (!confirm(`Has respondido ${totalAnswered} de ${totalQuestions} preguntas. ¿Seguro que quieres finalizar el test?`)) {
+                return;
+            }
+        }
+        
+        clearInterval(timerInterval);
+        document.getElementById('test-section').style.display = 'none';
+        
+        let correctCount = 0;
+        let incorrectCount = 0;
+        Object.values(answeredStatus).forEach(v => {
+            if (v) correctCount++;
+            else incorrectCount++;
+        });
+        
+        let percentage = (correctCount / totalQuestions) * 100;
+        let successColor = getComputedStyle(document.documentElement).getPropertyValue('--success').trim();
+        let errorColor = getComputedStyle(document.documentElement).getPropertyValue('--error').trim();
+        
+        document.getElementById('gauge-chart').style.background = `conic-gradient(${successColor} ${percentage}%, ${errorColor} 0)`;
+        document.getElementById('score-text').innerText = `${correctCount}/${totalQuestions}`;
+        
+        document.getElementById('results-detail-text').innerHTML = `Has acertado <strong><span style="color: var(--success);">${correctCount}</span></strong> y fallado <strong><span style="color: var(--error);">${incorrectCount}</span></strong> de un total de ${totalQuestions} preguntas.`;
+        
+        document.getElementById('results-section').style.display = 'block';
+        
+        let completed = JSON.parse(localStorage.getItem('completed_tests_v5') || '[]');
+        let currentTestId = `${selectedSubject}-${selectedCategory}-${selectedTopicName}`;
+        
+        // No marcamos check verde si es el test de Fallos
+        if (selectedCategory !== "Fallos" && !completed.includes(currentTestId)) {
+            completed.push(currentTestId);
+            localStorage.setItem('completed_tests_v5', JSON.stringify(completed));
+        }
+        
+        window.scrollTo(0,0);
+    }
+
+    function resetProgress() {
+        if(confirm("¿Seguro que quieres borrar todo tu progreso? Esto quitará todos los ✅ y vaciará tu lista de fallos.")) {
+            localStorage.removeItem('completed_tests_v5');
+            localStorage.removeItem('preguntas_falladas');
+            window.onload(); 
+        }
+    }
+
+    function shuffleArray(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+    }
+
+    function updateCheckmarks() {
+        const completedTests = JSON.parse(localStorage.getItem('completed_tests_v5') || '[]');
+        document.querySelectorAll('.topic-card').forEach(btn => {
+            const testId = btn.getAttribute('data-testid');
+            if (testId && completedTests.includes(testId) && !btn.innerText.includes('✅')) {
+                btn.innerText = btn.innerText + ' ✅ ';
+                btn.style.background = '#27ae60';
+            }
+        });
+    }
+
+    // ==========================================
+    // FUNCIÓN PARA EL BOTÓN "VOLVER"
+    // ==========================================
+    function goBackToMenu() {
+        // Simula presionar el botón de atrás del móvil o navegador
+        history.back();
+    }
+
+    // ==========================================
+    // NUEVAS FUNCIONES: REPASAR FALLOS
+    // ==========================================
+    function startFailedQuestionsTest() {
+        let failedQuestions = JSON.parse(localStorage.getItem('preguntas_falladas') || '[]');
+        
+        if (failedQuestions.length === 0) {
+            alert("¡Enhorabuena! 🎉 No tienes ninguna pregunta fallada pendiente de repasar.");
+            return;
+        }
+
+        selectedSubject = "Repaso General";
+        selectedCategory = "Fallos";
+        selectedTopicName = "Todos";
+        
+        document.getElementById('display-topic').innerText = `Repaso de Preguntas Falladas`;
+        
+        // Filtramos para sacar las preguntas que están guardadas como fallidas
+        currentQuestions = misPreguntas.filter(q => failedQuestions.includes(q.p));
+        
+        document.getElementById('login-section').style.display = 'none';
+        document.getElementById('test-section').style.display = 'block';
+        
+        history.pushState({page: 'test'}, "Test", "");
+        
+        startTime = new Date();
+        timerInterval = setInterval(updateTimer, 1000);
+        
+        shuffleArray(currentQuestions);
+        renderAllQuestions();
+        
+        window.scrollTo(0,0);
+    }
+
+    function updateFailedCount() {
+        let failedQuestions = JSON.parse(localStorage.getItem('preguntas_falladas') || '[]');
+        let countSpan = document.getElementById('failed-count');
+        if(countSpan) countSpan.innerText = failedQuestions.length;
+    }
+</script>
+</body>
+</html>
+
