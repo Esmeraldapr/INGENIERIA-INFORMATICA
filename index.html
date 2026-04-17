@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INGENIERÍA INFORMÁTICA</title>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
         :root {
             --primary: #2c3e50;
@@ -116,6 +124,8 @@
 
 <script>
    const misPreguntas = [
+
+
 
 // =========================================================================
 // M: 1º CURSO
@@ -826,8 +836,7 @@
 }
 
 ];
-
-    // ==========================================
+// ==========================================
     // VARIABLES GLOBALES
     // ==========================================
     let currentQuestions = [];
@@ -1063,7 +1072,7 @@
             
             const qText = document.createElement('div');
             qText.className = 'question-text';
-            qText.innerHTML = `${index + 1}/${currentQuestions.length}. ${q.p}`; // <--- Poniendo innerHTML aquí
+            qText.innerHTML = `${index + 1}/${currentQuestions.length}. ${q.p}`; // USANDO innerHTML AQUÍ
             qBlock.appendChild(qText);
             
             const optionsContainer = document.createElement('div');
@@ -1073,7 +1082,7 @@
             options.forEach(opt => {
                 const btn = document.createElement('button');
                 btn.className = 'option-btn';
-                btn.innerText = opt;
+                btn.innerHTML = opt; // USANDO innerHTML AQUÍ PARA LAS RESPUESTAS MATEMÁTICAS
                 // Pasamos q.p para guardar la pregunta si la falla
                 btn.onclick = function() { checkAnswer(this, index, opt, q.c, q.e, q.p); };
                 optionsContainer.appendChild(btn);
@@ -1088,6 +1097,13 @@
             
             container.appendChild(qBlock);
         });
+
+        // ==========================================
+        // AQUÍ ESTÁ EL AVISO PARA QUE MATHJAX DIBUJE LAS FÓRMULAS
+        // ==========================================
+        if (window.MathJax) {
+            MathJax.typesetPromise();
+        }
     }
 
     function checkAnswer(btn, index, selected, correct, info, questionText) {
@@ -1112,7 +1128,7 @@
             btn.classList.add('wrong');
             answeredStatus[index] = false;
             buttons.forEach(b => {
-                if(b.innerText === correct) b.classList.add('correct');
+                if(b.innerHTML === correct) b.classList.add('correct'); // Aseguramos usar innerHTML para la comprobación correcta si hay formato
             });
             
             // Si la falla y NO estaba ya en la lista, la guardamos
@@ -1249,4 +1265,3 @@
 </script>
 </body>
 </html>
-
