@@ -267,6 +267,206 @@
 
 // =========================================================================
 // M: 1º CURSO
+// T: Matemática Discreta y Álgebra
+// U: TEST 2
+// =========================================================================
+
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuáles son los autovalores de la matriz? $A = \\begin{pmatrix} -1 & 1 \\\\ -6 & 4 \\end{pmatrix}$",
+    r: ["$\\lambda_1=-1; \\lambda_2=-2$", "$\\lambda_1=1; \\lambda_2=2$", "$\\lambda_1=-1; \\lambda_2=2$", "$\\lambda_1=1; \\lambda_2=-2$"],
+    c: "$\\lambda_1=1; \\lambda_2=2$",
+    e: "Son las raíces de la ecuación característica, es decir, igualar el polinomio característico a cero: $P(\\lambda) = (\\lambda-1)\\cdot(\\lambda-2) = 0$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "Dado el siguiente grafo: <br><img src='https://raw.githubusercontent.com/Esmeraldapr/INGENIERIA-INFORMATICA/main/IMAGEN_MAT_DISCRETA_T2_P2.png' style='width:100%; max-width:300px; display:block; margin:10px auto;'> ¿Cuál es su matriz de adyacencia?",
+    r: [
+        "$\\begin{pmatrix} 0 & 0 & 0 & 1 & 1 \\\\ 0 & 0 & 1 & 1 & 0 \\\\ 0 & 1 & 0 & 0 & 1 \\\\ 1 & 1 & 0 & 0 & 1 \\\\ 1 & 0 & 1 & 1 & 0 \\end{pmatrix}$",
+        "$\\begin{pmatrix} 1 & 0 & 0 & 1 & 1 \\\\ 0 & 1 & 1 & 1 & 0 \\\\ 0 & 0 & 1 & 0 & 1 \\\\ 0 & 0 & 0 & 1 & 1 \\\\ 0 & 0 & 0 & 0 & 1 \\end{pmatrix}$",
+        "$\\begin{pmatrix} 1 & 0 & 0 & 1 & 1 \\\\ 0 & 1 & 1 & 1 & 0 \\\\ 0 & 1 & 1 & 0 & 1 \\\\ 1 & 1 & 0 & 1 & 1 \\\\ 1 & 0 & 1 & 1 & 1 \\end{pmatrix}$",
+        "$\\begin{pmatrix} 0 & 0 & 0 & 1 & 1 \\\\ 0 & 0 & 1 & 1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & 0 \\end{pmatrix}$"
+    ],
+    c: "$\\begin{pmatrix} 0 & 0 & 0 & 1 & 1 \\\\ 0 & 0 & 1 & 1 & 0 \\\\ 0 & 1 & 0 & 0 & 1 \\\\ 1 & 1 & 0 & 0 & 1 \\\\ 1 & 0 & 1 & 1 & 0 \\end{pmatrix}$",
+    e: "La matriz de adyacencia coloca un 1 en la posición (i,j) si hay una arista que conecta el nodo i con el nodo j, y 0 en caso contrario."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuál de las siguientes opciones es la correcta?",
+    r: [
+        "La multiplicidad algebraica de un autovalor siempre es menor que el tamaño de una matriz.",
+        "La multiplicidad algebraica de un autovalor es cuantas veces es raíz de la ecuación característica.",
+        "La multiplicidad algebraica de un autovalor de una matriz de dimensión m x n es, como máximo, el mínimo de m y n.",
+        "La multiplicidad geométrica de un autovalor es cuantas veces es raíz de la ecuación característica."
+    ],
+    c: "La multiplicidad algebraica de un autovalor es cuantas veces es raíz de la ecuación característica.",
+    e: "Por definición, la multiplicidad algebraica es el número de veces que el autovalor aparece como raíz del polinomio característico."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuál es la multiplicidad algebraica de cada autovalor? $A = \\begin{pmatrix} -1 & 1 \\\\ -6 & 4 \\end{pmatrix}$",
+    r: ["$a(\\lambda_1)=1; a(\\lambda_2)=2$", "$a(\\lambda_1)=2; a(\\lambda_2)=1$", "$a(\\lambda_1)=1; a(\\lambda_2)=1$", "$a(\\lambda_1)=2; a(\\lambda_2)=2$"],
+    c: "$a(\\lambda_1)=1; a(\\lambda_2)=1$",
+    e: "Cada uno de los valores propios aparece una vez como raíz de la ecuación característica, así que la multiplicidad algebraica es uno para cada autovalor."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuál es la solución de la siguiente congruencia lineal? $5\\cdot x \\equiv 6 \\pmod{13}$",
+    r: ["$13\\cdot k + 9$", "$13\\cdot k + 7$", "$13\\cdot k + 11$", "$13\\cdot k + 3$"],
+    c: "$13\\cdot k + 9$",
+    e: "Calculando el inverso modular de 5 módulo 13 (que es 8) y multiplicando por 6, obtenemos $48 \\equiv 9 \\pmod{13}$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "El máximo común divisor de los números 300 y 420 es...",
+    r: ["60", "30", "20", "10"],
+    c: "60",
+    e: "Descomponiendo en factores: $300 = 2^2 \\cdot 3 \\cdot 5^2$ y $420 = 2^2 \\cdot 3 \\cdot 5 \\cdot 7$. El MCD son los comunes al menor exponente: $2^2 \\cdot 3 \\cdot 5 = 60$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "Calcula los valores propios de la siguiente matriz: $A = \\begin{pmatrix} 1 & 3 & 3 \\\\ -3 & -5 & -3 \\\\ 3 & 3 & 1 \\end{pmatrix}$",
+    r: [
+        "$\\lambda_1=1; \\lambda_2=-2; \\lambda_3=-2$",
+        "$\\lambda_1=-1; \\lambda_2=2; \\lambda_3=-2$",
+        "$\\lambda_1=1; \\lambda_2=-2; \\lambda_3=1$",
+        "$\\lambda_1=1; \\lambda_2=2; \\lambda_3=0$"
+    ],
+    c: "$\\lambda_1=1; \\lambda_2=-2; \\lambda_3=-2$",
+    e: "Igualando el determinante $|A - \\lambda I| = 0$, obtenemos el polinomio característico cuyas raíces son 1 y -2 (raíz doble)."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "En el caso particular de un grafo que es un árbol, si hablamos de el nivel de un nodo, hablamos de...",
+    r: [
+        "... el número de hojas del árbol.",
+        "... la longitud del camino que va de la raíz hasta dicho vértice.",
+        "... el número de hijos de la raíz del árbol.",
+        "... la altura del árbol."
+    ],
+    c: "... la longitud del camino que va de la raíz hasta dicho vértice.",
+    e: "El nivel de un nodo se define como la distancia (número de aristas) desde la raíz hasta ese nodo."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "Dada la siguiente congruencia lineal $3\\cdot x \\equiv 20 \\pmod 9$ elegir la respuesta correcta",
+    r: [
+        "Tiene una única solución ya que $d = \\text{mcd}(a, n) = 1$",
+        "Tiene una familia de soluciones ya que $d = \\text{mcd}(a, n)$ es divisor de b.",
+        "La congruencia no tiene solución ya que el $d = \\text{mcd}(a, n)$ no es divisor de b.",
+        "Ninguna de las otras."
+    ],
+    c: "La congruencia no tiene solución ya que el $d = \\text{mcd}(a, n)$ no es divisor de b.",
+    e: "La congruencia no tiene solución, porque el máximo común divisor de 3 y 9 es 3, y 3 no divide a 20."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuál es el valor $\\phi$ de Euler para n=12?",
+    r: ["3", "4", "11", "8"],
+    c: "4",
+    e: "Los enteros más pequeños que 12, y que son primos con 12 son: 1, 5, 7 y 11. Aplicando la fórmula: $\\phi(12) = 12 \\cdot (1 - 1/2) \\cdot (1 - 1/3) = 4$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuál de los siguientes vectores es autovector de la matriz? $A = \\begin{pmatrix} -1 & 1 \\\\ -6 & 4 \\end{pmatrix}$",
+    r: ["(1, 2)", "(1, 4)", "(2, 1)", "(-2, 1)"],
+    c: "(1, 2)",
+    e: "Se comprueba multiplicando: $A \\cdot (1, 2)^t = (1, 2)^t$. Es un autovector asociado al autovalor 1."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "Las soluciones de la congruencia lineal $3\\cdot x \\equiv 9 \\pmod{15}$ son:",
+    r: ["8, 13", "2, 4, 6", "1, 3, 5", "3, 8, 13"],
+    c: "3, 8, 13",
+    e: "La congruencia tiene 3 soluciones, dado que m.c.d(3,15)=3, que divide a 9. Encontrando la primera solución (3), las otras son sumando 15/3 = 5."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "Los vectores propios no nulos asociados a una matriz A se obtienen resolviendo:",
+    r: [
+        "$(I - \\lambda \\cdot A) \\cdot \\vec{x} = \\vec{x}$ donde lambda se sustituye por cada uno de los valores propios obtenidos.",
+        "$(A - \\lambda \\cdot I) \\cdot \\vec{x} = \\vec{0}$ donde lambda se sustituye por cada uno de los valores propios obtenidos.",
+        "$(A - \\lambda \\cdot I) \\cdot \\vec{x} = \\vec{x}$ donde lambda se sustituye por cada uno de los valores propios obtenidos.",
+        "$(I - \\lambda \\cdot A) \\cdot \\vec{x} = \\vec{0}$ donde lambda se sustituye por cada uno de los valores propios obtenidos."
+    ],
+    c: "$(A - \\lambda \\cdot I) \\cdot \\vec{x} = \\vec{0}$ donde lambda se sustituye por cada uno de los valores propios obtenidos.",
+    e: "Se obtienen resolviendo $A \\cdot \\vec{x} = \\lambda \\cdot \\vec{x}$, que se reescribe como $(A - \\lambda \\cdot I) \\cdot \\vec{x} = \\vec{0}$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuál es la matriz P que permite diagonalizar la matriz A? $A = \\begin{pmatrix} -1 & 1 \\\\ -6 & 4 \\end{pmatrix}$. Es decir, ¿Qué matriz P hace que $D=P^{-1}\\cdot A\\cdot P$ sea diagonal?",
+    r: [
+        "$P^{-1}$ es la matriz compuesta por los autovectores, por columnas, y por tanto, P es su inversa.",
+        "La matriz no es diagonalizable.",
+        "P es la matriz compuesta por los autovectores, por columnas.",
+        "$P^{-1}$ es la matriz compuesta por los autovectores, por filas, y por tanto, P es su inversa."
+    ],
+    c: "P es la matriz compuesta por los autovectores, por columnas.",
+    e: "La matriz de paso P se construye colocando los autovectores linealmente independientes de la matriz A como columnas."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuál de los siguientes vectores es autovector de la matriz? $A = \\begin{pmatrix} -1 & 1 \\\\ -6 & 4 \\end{pmatrix}$",
+    r: ["(-1, 4)", "(1, 1)", "(-3, 1)", "(1, 3)"],
+    c: "(1, 3)",
+    e: "Se comprueba multiplicando: $A \\cdot (1, 3)^t = (2, 6)^t = 2\\cdot(1, 3)^t$. Es un autovector asociado al autovalor 2."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuál es el polinomio característico de la matriz A? $A = \\begin{pmatrix} -1 & 1 \\\\ -6 & 4 \\end{pmatrix}$",
+    r: [
+        "$P(x) = (x-1)\\cdot(x-2)$",
+        "$P(x) = (x-1)\\cdot(x+2)$",
+        "$P(x) = (x+1)\\cdot(x+2)$",
+        "$P(x) = (x+1)\\cdot(x-2)$"
+    ],
+    c: "$P(x) = (x-1)\\cdot(x-2)$",
+    e: "El polinomio característico lo calculamos como $|A - \\lambda I| = (-1-\\lambda)(4-\\lambda) - (-6)(1) = \\lambda^2 - 3\\lambda + 2 = (\\lambda-1)(\\lambda-2)$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuánto es $5^{178} \\pmod 7$?",
+    r: ["4", "1", "2", "3"],
+    c: "2",
+    e: "Por el pequeño teorema de Fermat, $5^6 \\equiv 1 \\pmod 7$. Como $178 = 6 \\cdot 29 + 4$, entonces $5^{178} \\equiv 5^4 \\pmod 7$. Y $5^4 = 625 \\equiv 2 \\pmod 7$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuál es la solución de la siguiente congruencia lineal? $4\\cdot x \\equiv 7 \\pmod{11}$",
+    r: ["$11\\cdot k + 10$", "$11\\cdot k + 8$", "$11\\cdot k + 6$", "$11\\cdot k + 4$"],
+    c: "$11\\cdot k + 10$",
+    e: "Multiplicando ambos miembros por 3 (inverso de 4 en mod 11): $12\\cdot x \\equiv 21 \\pmod{11} \\rightarrow x \\equiv 10 \\pmod{11}$. Solución: $10 + 11\\cdot k$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "¿Cuál es la solución de la siguiente congruencia lineal? $2\\cdot x \\equiv 5 \\pmod 7$",
+    r: ["$7\\cdot k + 6$", "$7\\cdot k + 5$", "$7\\cdot k + 3$", "$7\\cdot k + 1$"],
+    c: "$7\\cdot k + 6$",
+    e: "Multiplicando ambos miembros por 4: $8\\cdot x \\equiv 20 \\pmod 7 \\rightarrow x \\equiv 6 \\pmod 7$. Solución: $6 + 7\\cdot k$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "Dado el siguiente grafo G y los posibles subgrafos: <br><img src='https://raw.githubusercontent.com/Esmeraldapr/INGENIERIA-INFORMATICA/main/IMAGEN_MAT_DISCRETA_T2_P20.png' style='width:100%; max-width:350px; display:block; margin:10px auto;'> Elegir el grafo que NO ES SUBGRAFO suyo.",
+    r: ["Grafo $H_3$", "Grafo $H_5$", "Grafo $H_1$", "Grafo $H_4$"],
+    c: "Grafo $H_5$",
+    e: "El grafo $H_5$ no es un subgrafo porque contiene la arista entre los nodos 1 y 5, y dicha arista no existe en el grafo original G."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "Si hablamos de un grafo donde todos los vértices están unidos mediante aristas al resto de vértices, hablamos de un grafo...",
+    r: ["... completo.", "... lineal.", "... circular.", "... bipartito."],
+    c: "... completo.",
+    e: "Un grafo completo es aquel en el que cada par de vértices distintos está conectado por una arista."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 2",
+    p: "En el caso particular de un grafo que es un árbol, si hablamos de hojas, hablamos de...",
+    r: ["... vértices internos.", "... nodo origen del árbol.", "... nodos con hijos.", "... nodos sin hijos."],
+    c: "... nodos sin hijos.",
+    e: "En la terminología de árboles, los nodos que no tienen descendencia (hijos) se denominan hojas."
+}
+// =========================================================================
+// M: 1º CURSO
 // T: Estructura y Tecnología de Computadores I
 // U: TEST 1
 // =========================================================================
