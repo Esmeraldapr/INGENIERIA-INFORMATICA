@@ -1063,7 +1063,7 @@
             
             const qText = document.createElement('div');
             qText.className = 'question-text';
-            qText.innerText = `${index + 1}/${currentQuestions.length}. ${q.p}`;
+            qText.innerHTML = `${index + 1}/${currentQuestions.length}. ${q.p}`; // <--- Poniendo innerHTML aquí
             qBlock.appendChild(qText);
             
             const optionsContainer = document.createElement('div');
