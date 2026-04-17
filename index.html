@@ -116,7 +116,223 @@
 
 <script>
     const misPreguntas = [
-      
+
+  // =========================================================================
+// M: 1º CURSO
+// T: Cálculo y Análisis Matemático
+// U: TEST 1
+// =========================================================================
+
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "El número π (pi) es...",
+    r: ["irracional.", "natural.", "entero.", "racional."],
+    c: "irracional.",
+    e: "El número π no puede expresarse como una fracción de dos números enteros y tiene infinitos decimales no periódicos.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "Dada la función tangente...",
+    r: ["el recorrido es todo R.", "el dominio es [-π, π].", "el dominio es todo R.", "el recorrido es [-1, 1]."],
+    c: "el recorrido es todo R.",
+    e: "La función tangente toma todos los valores reales posibles en su eje Y, mientras que su dominio presenta asíntotas en múltiplos impares de π/2.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "El conjunto de números reales {x ∈ R | x ≤ 5} expresado como intervalo es equivalente a...",
+    r: ["(-∞, 5].", "(5, +∞).", "[5, +∞).", "(-∞, 5)."],
+    c: "(-∞, 5].",
+    e: "El símbolo '≤' indica que el 5 está incluido (corchete cerrado), y al ser menores o iguales, el intervalo viene desde el infinito negativo.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "La sucesión dada por el término general $a_{n}=1/n$ es...",
+    r: ["estrictamente decreciente.", "decreciente, pero no estrictamente decreciente.", "creciente, pero no estrictamente creciente.", "estrictamente creciente."],
+    c: "estrictamente decreciente.",
+    e: "A medida que 'n' aumenta (1, 2, 3...), el valor de la fracción disminuye constantemente (1, 0.5, 0.33...), cumpliendo siempre que $a_{n+1} < a_n$.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "Sea la sucesión $a_{n}=1/n^{2}$. Dicha sucesión...",
+    r: ["tiene máximo, pero no mínimo.", "tiene máximo y mínimo.", "tiene mínimo, pero no máximo.", "no tiene ni máximo ni mínimo."],
+    c: "tiene máximo, pero no mínimo.",
+    e: "El máximo es 1 (cuando n=1). Aunque tiende a 0, nunca llega a alcanzar ese valor, por lo que no tiene un mínimo perteneciente a la sucesión.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cuál es la afirmación FALSA?",
+    r: ["Toda sucesión acotada es convergente.", "Si existe, el límite de una sucesión es único.", "Toda sucesión convergente está acotada.", "Toda sucesión monótona y acotada es convergente."],
+    c: "Toda sucesión acotada es convergente.",
+    e: "Una sucesión puede estar acotada y ser oscilante (ej: $a_n = (-1)^n$), lo cual no converge a un único valor.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "Si no existe g(a), pero sí existe límite finito de g(x) cuando x → a, decimos que g(x) en x=a tiene una...",
+    r: ["discontinuidad evitable.", "continuidad.", "discontinuidad inevitable.", "asíntota vertical."],
+    c: "discontinuidad evitable.",
+    e: "Es evitable porque el límite existe; bastaría definir g(a) como el valor del límite para que la función fuera continua.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cuál de los siguientes escenarios es suficiente para afirmar que NO existe un punto c ∈ [a, b] tal que g(c)=0?",
+    r: ["$g(a)\\cdot g(b)>0, g(x)$ continua en [a, b], derivable en (a, b), siendo $g'(x)>0$ en (a, b).", "$g(a)\\cdot g(b)>0$.", "$g(a)\\cdot g(b)>0$ y $g(x)$ continua en [a, b].", "$g(a)\\cdot g(b)>0, g(x)$ continua en [a, b] y derivable en (a, b)."],
+    c: "$g(a)\\cdot g(b)>0, g(x)$ continua en [a, b], derivable en (a, b), siendo $g'(x)>0$ en (a, b).",
+    e: "Si la función es estrictamente monótona (creciente) y los extremos tienen el mismo signo, es imposible que cruce el eje X.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cuál de las siguientes afirmaciones es FALSA?",
+    r: ["Toda función continua es derivable.", "Toda función derivable es continua.", "La derivada en un punto es la pendiente de la recta tangente.", "Si la derivada es negativa en un punto, la función es decreciente allí."],
+    c: "Toda función continua es derivable.",
+    e: "Existen funciones continuas que no son derivables en ciertos puntos (ej: el valor absoluto |x| en x=0).",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "Para aplicar el teorema del valor medio a una función g(x) en [c, d]...",
+    r: ["la función debe ser continua en [c, d] y derivable en (c, d).", "debe ser continua en (c, d).", "debe ser continua en (c, d) y derivable en [c, d].", "no es necesario que se verifique ninguna condición."],
+    c: "la función debe ser continua en [c, d] y derivable en (c, d).",
+    e: "Estas son las condiciones de hipótesis necesarias para el Teorema de Lagrange o Valor Medio.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "Dada g(x), si en un punto c se cumple que $g'(c)=0$ y que $g''(c)>0$ entonces...",
+    r: ["$g(x)$ tiene un mínimo relativo o absoluto en x=c.", "$g(x)$ tiene un máximo absoluto en x=c.", "$g(x)$ tiene un máximo relativo en x=c.", "$g(x)$ tiene un mínimo absoluto en x=c."],
+    c: "$g(x)$ tiene un mínimo relativo o absoluto en x=c.",
+    e: "La derivada primera cero indica punto crítico; la derivada segunda positiva indica que la función es cóncava hacia arriba (mínimo).",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "Si se sabe que $g'(d)=0$ y $g''(d)=0$...",
+    r: ["No se puede establecer si tiene un máximo, mínimo o punto de inflexión.", "Tiene un máximo relativo.", "Tiene un mínimo relativo.", "Tiene un punto de inflexión."],
+    c: "No se puede establecer si tiene un máximo, mínimo o punto de inflexión.",
+    e: "Cuando ambas derivadas son cero, el criterio de la derivada segunda falla y se requiere analizar derivadas de orden superior.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "Para que una función sea integrable...",
+    r: ["no es necesario que sea ni continua ni derivable.", "debe ser continua y derivable.", "debe ser continua.", "debe ser derivable."],
+    c: "no es necesario que sea ni continua ni derivable.",
+    e: "Existen funciones con discontinuidades que siguen siendo integrables (como las funciones escalonadas o a tramos).",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Qué teorema dice que si f(x) es continua en [a, b], existe un c tal que $\\int_{a}^{b}f(x)dx=f(c)(b-a)$?",
+    r: ["El teorema del valor medio del cálculo integral.", "El teorema fundamental del cálculo.", "La regla de Barrow.", "La suma de Riemann."],
+    c: "El teorema del valor medio del cálculo integral.",
+    e: "Este teorema garantiza que el área bajo la curva es igual al área de un rectángulo con altura igual al valor de la función en algún punto intermedio.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Qué ocurre si calculamos la integral de una función g(x) definida a tramos integrable?",
+    r: ["Obtenemos una función definida a tramos.", "La integral no se puede realizar.", "Obtenemos una función definida a tramos, solo si es continua.", "Obtenemos una función definida a tramos, solo si es derivable."],
+    c: "Obtenemos una función definida a tramos.",
+    e: "La integral de una función a tramos resulta en otra función a tramos donde se suman las áreas acumuladas.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cuál es el área bajo $g(x)=x^{3}$ entre x=1 y x=3?",
+    r: ["20.", "8.", "12.", "40."],
+    c: "20.",
+    e: "Cálculo: $[x^4/4]$ desde 1 a 3 = $(3^4/4) - (1^4/4) = 81/4 - 1/4 = 80/4 = 20$.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "El error consecuencia de que los cálculos no pueden realizarse con precisión ilimitada es...",
+    r: ["error de redondeo.", "error de bulto.", "error de truncamiento.", "error relativo."],
+    c: "error de redondeo.",
+    e: "El error de redondeo aparece al ajustar un número real a la cantidad finita de dígitos que permite la máquina.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "Se denomina cifras significativas de un número al...",
+    r: ["número de dígitos entre la primera y última cifra no nula, incluidas estas.", "número de dígitos de orden inferior.", "número de dígitos nulos del número.", "número total de dígitos escritos."],
+    c: "número de dígitos entre la primera y última cifra no nula, incluidas estas.",
+    e: "Esta es la definición técnica para determinar la precisión de una medida o número.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "En notación científica normalizada base 10, el primer dígito de la mantisa...",
+    r: ["no puede ser nulo.", "debe estar entre 0 y 1.", "debe ser igual a 1.", "puede tomar cualquier valor."],
+    c: "no puede ser nulo.",
+    e: "En la forma normalizada, la mantisa debe empezar por un dígito entre 1 y 9 para asegurar una representación única.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cuál es la representación en binario del número decimal 73?",
+    r: ["1001001.", "1011001.", "1001101.", "1001100."],
+    c: "1001001.",
+    e: "Cálculo: 64 + 8 + 1 = $2^6 + 2^3 + 2^0 = 1001001$.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "Cifras cúbicas de lado 2m con error de 10cm. ¿Cuál será el volumen?",
+    r: ["$8,0 \\pm 1,2 \\text{ m}^3$.", "$8,0 \\pm 0,1 \\text{ m}^3$.", "$8,0 \\pm 0,3 \\text{ m}^3$.", "$8,0 \\pm 1,5 \\text{ m}^3$."],
+    c: "$8,0 \\pm 1,2 \\text{ m}^3$.",
+    e: "Utilizando diferenciales: $V = L^3 \\rightarrow dV = 3L^2 \\cdot dL = 3(2^2) \\cdot 0.1 = 1.2 \\text{ m}^3$.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "Dada $f(x) = x^3 \\cdot e^{-x}$, ¿cuál es su dominio?",
+    r: ["R.", "R - {0}.", "[0, +∞).", "(0, +∞)."],
+    c: "R.",
+    e: "Tanto el polinomio $x^3$ como la exponencial $e^{-x}$ están definidos para todos los números reales.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cuántas asíntotas y de qué tipo tiene $f(x) = x^3 \\cdot e^{-x}$?",
+    r: ["Una asíntota horizontal.", "Una asíntota vertical.", "Una vertical y una horizontal.", "No tiene ninguna."],
+    c: "Una asíntota horizontal.",
+    e: "Cuando x tiende a +∞, el límite es 0 (asíntota horizontal y=0). No tiene verticales porque el dominio es todo R.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cuál es el límite de $f(x) = x^3 \\cdot e^{-x}$ cuando x tiende a 0?",
+    r: ["0.", "+∞.", "-∞.", "No existe."],
+    c: "0.",
+    e: "$f(0) = 0^3 \\cdot e^0 = 0 \\cdot 1 = 0$.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cuál es el límite de $f(x) = x^3 \\cdot e^{-x}$ cuando x tiende a infinito?",
+    r: ["0.", "+∞.", "-∞.", "No existe."],
+    c: "0.",
+    e: "Por la jerarquía de infinitos, la exponencial $e^x$ en el denominador crece mucho más rápido que el polinomio $x^3$.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cuántas discontinuidades y de qué tipo tiene la función $f(x) = x^3 \\cdot e^{-x}$?",
+    r: ["No tiene ninguna.", "Una no evitable.", "Una evitable.", "Una de cada tipo."],
+    c: "No tiene ninguna.",
+    e: "Al ser producto de funciones continuas en todo R, f(x) es continua en todo su dominio.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cuál es la derivada de $f(x) = x^3 \\cdot e^{-x}$ en x=1?",
+    r: ["$2e^{-1}$.", "0.", "1.", "$-e$."],
+    c: "$2e^{-1}$.",
+    e: "$f'(x) = 3x^2 \\cdot e^{-x} - x^3 \\cdot e^{-x}$. Para x=1: $3(1)e^{-1} - (1)e^{-1} = 2e^{-1}$.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cómo es f(x) en x=2?",
+    r: ["Continua y derivable.", "Ni continua ni derivable.", "Continua, no derivable.", "No continua, pero derivable."],
+    c: "Continua y derivable.",
+    e: "Al ser una función elemental (polinómica por exponencial), es infinitamente derivable en todo R.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "La función f(x) en $x=3$...",
+    r: ["tiene un máximo relativo.", "tiene un mínimo relativo.", "tiene un punto de inflexión.", "no tiene nada."],
+    c: "tiene un máximo relativo.",
+    e: "La derivada $f'(x) = e^{-x}(3x^2 - x^3)$ se anula en x=3. Analizando el signo, pasa de crecer a decrecer.",
+},
+{
+    m: "1º CURSO", t: "Cálculo y Análisis Matemático", u: "TEST 1",
+    p: "¿Cuál es el valor de la integral de $f(x) = x^3 \\cdot e^{-x}$ entre x=0 y x=1?",
+    r: ["$6 - 16e^{-1}$.", "0.", "1/4e.", "$(e-1)/(4e)$."],
+    c: "$6 - 16e^{-1}$.",
+    e: "Requiere integración por partes sucesiva (3 veces). El resultado evaluado es $6 - 16/e$.",
+},    
 // =========================================================================
 // M: 1º CURSO
 // T: Estructura y Tecnología de Computadores I
