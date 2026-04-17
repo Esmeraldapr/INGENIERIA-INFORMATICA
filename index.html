@@ -115,7 +115,227 @@
 </div>
 
 <script>
-    const misPreguntas = [
+   const misPreguntas = [
+
+// =========================================================================
+// M: 1º CURSO
+// T: Estructura y Tecnología de Computadores I
+// U: TEST 1
+// =========================================================================
+
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "Indica qué afirmación es falsa con respecto a la arquitectura Harvard:",
+    r: ["Es la más utilizada en los PC. Es lenta pero flexible.", "El tener una memoria de programa y una de datos la hace una arquitectura más estable y con mayor velocidad.", "Los datos y programas se almacenan en dispositivos de memoria independientes y manejados por diferentes subsistemas.", "Consume muchas líneas E/S del procesador, por lo que su coste es mayor."],
+    c: "Es la más utilizada en los PC. Es lenta pero flexible.",
+    e: "La arquitectura más utilizada en PCs es la Von Neumann; la Harvard destaca por tener buses independientes para instrucciones y datos[cite: 19, 21, 22]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "¿Quién creó uno de los primeros computadores electrónicos programables del mundo y trabajó en los algoritmos informáticos?",
+    r: ["Alan Turing.", "Charles Babbage.", "John Atanasoff.", "Ada Lovelace."],
+    c: "Alan Turing.",
+    e: "Alan Turing es una figura clave en la creación de computadores electrónicos y algoritmos[cite: 24, 25]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "Un modelo, en el sentido científico del término, es:",
+    r: ["Un conjunto de noticias, informes o datos que nos aportan algún nuevo conocimiento.", "Una representación abstracta, conceptual o gráfica, física o matemática de fenómenos, sistemas o procesos a fin de analizarlos, describirlos, explicarlos, simularlos y predecirlos.", "Un sistema al que se le suministra información en forma de datos para que luego devuelva unos resultados acordes con la resolución de un determinado problema.", "Una secuencia de instrucciones que resuelven determinados problemas planteados."],
+    c: "Una representación abstracta, conceptual o gráfica, física o matemática de fenómenos, sistemas o procesos a fin de analizarlos, describirlos, explicarlos, simularlos y predecirlos.",
+    e: "Se define como una abstracción para analizar y predecir fenómenos o procesos[cite: 29, 31]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "¿Qué característica de la arquitectura Von Neumann se puede ver como una ventaja, ya que facilita la conexión de memoria externa con una mínima implementación extra de hardware?",
+    r: ["El hecho de tener un solo bus para acceder tanto a datos como a instrucciones.", "El hecho de tener dos buses diferenciados para acceder a datos y a instrucciones.", "El hecho de que la CPU lea la instrucción desde la memoria principal.", "El hecho de tener una ALU que realiza operaciones."],
+    c: "El hecho de tener un solo bus para acceder tanto a datos como a instrucciones.",
+    e: "Compartir el mismo bus para datos e instrucciones simplifica el hardware necesario para la conexión[cite: 37, 41]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "¿Qué componente de la arquitectura Von Neumann se encarga de realizar operaciones con los datos?",
+    r: ["La unidad de control.", "La unidad aritmético-lógica (ALU).", "El bus.", "La memoria."],
+    c: "La unidad aritmético-lógica (ALU).",
+    e: "La ALU es la unidad responsable de procesar las operaciones aritméticas y lógicas[cite: 42, 44]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "El número binario 10010001 es igual al número decimal:",
+    r: ["145.", "122.", "-140.", "-12."],
+    c: "145.",
+    e: "La conversión de 10010001₂ a base decimal resulta en 145[cite: 47, 48]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "La suma binaria 110 + 100 es igual a:",
+    r: ["1010.", "1111.", "0110.", "0011."],
+    c: "1010.",
+    e: "La suma de los valores binarios 110 y 100 da como resultado 1010[cite: 52, 53, 55]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "El complemento a 2 del número decimal -19 con 8 bits es:",
+    r: ["11101101.", "00110111.", "00110001.", "00111000."],
+    c: "11101101.",
+    e: "El cálculo del complemento a 2 para -19 en 8 bits es 11101101[cite: 60, 63]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "El número binario 100110011010 puede escribirse en octal como:",
+    r: ["4632₈.", "1402₈.", "3214₈.", "4204₈."],
+    c: "4632₈.",
+    e: "Al agrupar los bits de tres en tres desde la derecha, el resultado es 4632₈[cite: 65, 66]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "El número binario 111111000101101001 puede escribirse en hexadecimal como:",
+    r: ["3F169₁₆.", "3F142₁₆.", "3F031₁₆.", "3F101₁₆."],
+    c: "3F169₁₆.",
+    e: "La conversión a base 16 agrupando de 4 en 4 bits resulta en 3F169₁₆[cite: 71, 72]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "¿Cuál de las siguientes expresiones es una suma de productos?",
+    r: ["AB + AC + AC'.", "(A + B' + C)(A' + B + C).", "B + A'(C + D).", "(A + C)(A + B' + C)."],
+    c: "AB + AC + AC'.",
+    e: "La suma de productos (SOP) consiste en términos multiplicativos (AND) unidos por sumas (OR)[cite: 76, 80]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "En un mapa de Karnaugh de 4 variables, un término producto de 2 variables se obtiene de un:",
+    r: ["Grupo de 4 celdas de 1s.", "Grupo de 2 celdas de 1s.", "Grupo de 8 celdas de 1s.", "Grupo de 4 celdas de 0s."],
+    c: "Grupo de 4 celdas de 1s.",
+    e: "Para reducir a un término de 2 variables en un mapa de 4, se deben agrupar 4 celdas adyacentes[cite: 84, 87]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "La función F = ABC + ABC' + AB'C + AB'C' + A'B'C' expresada como suma de minitérminos es:",
+    r: ["F = Σ₃(7, 6, 5, 4, 0).", "F = Σ₃(5, 12, 3, 6).", "F = Σ₃(7, 1, 1, 1, 0).", "No puede expresarse así."],
+    c: "F = Σ₃(7, 6, 5, 4, 0).",
+    e: "Cada término de la función corresponde a los índices numéricos 7, 6, 5, 4 y 0[cite: 89, 91]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "Aplicando las leyes de De Morgan, (A + B)' es igual a:",
+    r: ["A' B'.", "A' + B'.", "AB.", "1."],
+    c: "A' B'.",
+    e: "De acuerdo a las leyes de Morgan, el negado de una suma es el producto de los negados[cite: 94, 96]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "Simplifica la siguiente función mediante mapa de Karnaugh: <br><img src='https://raw.githubusercontent.com/Esmeraldapr/INGENIERIA-INFORMATICA/main/IMAGEN_DEL_TEST_1_DE_LA_PREGUNTA_15.png' style='width:100%; max-width:300px; display:block; margin:10px auto;'>",
+    r: ["F = AD' + AB'C.", "F = A'B'C' + A'BCD.", "F = ABC + AB'C'D' + A'D + A'BC'.", "F = A'B'C' + A'BCD + AD' + AB'C."],
+    c: "F = AD' + AB'C.",
+    e: "La simplificación visual del mapa de Karnaugh adjunto resulta en la expresión AD' + AB'C[cite: 103, 128]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "¿A qué función lógica corresponde la siguiente tabla de verdad? <br><img src='https://raw.githubusercontent.com/Esmeraldapr/INGENIERIA-INFORMATICA/main/IMAGEN_DEL_TEST_1_DE_LA_PREGUNTA_16.png' style='width:100%; max-width:250px; display:block; margin:10px auto;'>",
+    r: ["F = A'B' + A'B + AB'.", "F = AB' + A'B + AB.", "F = B + A.", "F = AB + A'B."],
+    c: "F = A'B' + A'B + AB'.",
+    e: "La tabla de verdad muestra que F es 1 para las combinaciones 00, 01 y 10, lo que corresponde a A'B' + A'B + AB'[cite: 132, 133, 138]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "Los circuitos integrados compuestos por más de 100 puertas están dentro de la escala:",
+    r: ["LSI (large scale of integration).", "MSI (medium scale of integration).", "SSI (small scale of integration).", "VLSI (very large scale of integration)."],
+    c: "LSI (large scale of integration).",
+    e: "La escala LSI se define para integraciones que superan las 100 puertas[cite: 139, 141]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "¿Qué función lógica implementa el siguiente circuito? <br><img src='https://raw.githubusercontent.com/Esmeraldapr/INGENIERIA-INFORMATICA/main/IMAGEN_DEL_TEST_1_DE_LA_PREGUNTA_18.png' style='width:100%; max-width:400px; display:block; margin:10px auto;'>",
+    r: ["F = A'(A' + B)(AB + A' + B).", "F = (AB + B')' + B' + B'(B' + C).", "F = A'(A' + B)(AB + A + B).", "F = A'(A' + B)(AB + A' + B)'."],
+    c: "F = A'(A' + B)(AB + A' + B).",
+    e: "El análisis del esquema de puertas lógicas proporcionado corresponde a la función F = A'(A' + B)(AB + A' + B)[cite: 146, 149]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "Los dispositivos MSI son clasificados en diferentes familias, indica cuál de los siguientes NO pertenece a una de ellas:",
+    r: ["Dispositivos de entrada-salida.", "Dispositivos aritmético-lógicos.", "Dispositivos comparadores.", "Dispositivos de camino de datos."],
+    c: "Dispositivos de entrada-salida.",
+    e: "Las familias MSI comunes incluyen comparadores, dispositivos aritméticos y de camino de datos, pero no se clasifican bajo 'entrada-salida' en este contexto[cite: 154, 157]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "Un circuito lógico con una salida AB'C + AC' consta de:",
+    r: ["Dos puertas AND, una puerta OR y dos inversores.", "Dos puertas AND y una puerta OR.", "Dos puertas OR, una puerta AND y dos inversores.", "Dos puertas AND, una puerta OR y un inversor."],
+    c: "Dos puertas AND, una puerta OR y dos inversores.",
+    e: "Se requieren dos AND para los productos, una OR para la suma y dos inversores para las variables negadas B' y C'[cite: 159, 161]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "¿Qué biestable es especialmente útil cuando se desea almacenar un único bit?",
+    r: ["Biestable D.", "Biestable RS.", "Biestable JK.", "Biestable universal."],
+    c: "Biestable D.",
+    e: "El biestable D es fundamental para el almacenamiento simple de un bit de información[cite: 167, 169]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "A partir de la siguiente tabla de estados de un circuito secuencial síncrono: <br><img src='https://raw.githubusercontent.com/Esmeraldapr/INGENIERIA-INFORMATICA/main/IMAGEN_DEL_TEST_1_DE_LA_PREGUNTA_22.png' style='width:100%; max-width:400px; display:block; margin:10px auto;'>",
+    r: ["Cuando el sistema está en el estado B y la señal de entrada vale 1, pasaremos al estado D con salida 0.", "Cuando el sistema está en el estado D y la señal de entrada vale 1, pasaremos al estado B con salida 0.", "Cuando el sistema está en el estado D y la señal de entrada vale 1, pasaremos al estado B con salida 1.", "Cuando el sistema está en el estado B y la señal de entrada vale 0, pasaremos al estado D con salida 0."],
+    c: "Cuando el sistema está en el estado B y la señal de entrada vale 1, pasaremos al estado D con salida 0.",
+    e: "La tabla indica que en el estado B, con entrada 1, el siguiente estado es D y la salida es 0[cite: 172, 173, 174]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "Los registros de desplazamiento paralelo-serie tienen:",
+    r: ["Accesibles las entradas de todos los biestables, pero únicamente la salida del último.", "Accesible únicamente la entrada del primer biestable y la salida del último.", "Accesibles las salidas de todos los biestables, pero únicamente la entrada del primero.", "Accesible únicamente la entrada del primer biestable."],
+    c: "Accesibles las entradas de todos los biestables, pero únicamente la salida del último.",
+    e: "Este tipo de registro permite cargar datos en paralelo pero solo extraerlos de forma secuencial por el final[cite: 178, 179]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "¿En qué biestable al activarse sus 2 entradas simultáneamente se cambia de estado?",
+    r: ["Biestable JK.", "Biestable RS.", "Biestable D.", "No existe ningún biestable con esa característica."],
+    c: "Biestable JK.",
+    e: "El biestable JK cambia de estado (modo toggle) cuando ambas entradas están activas[cite: 187, 190]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "En los circuitos secuenciales...",
+    r: ["... para una combinación de entradas dada, las salidas pueden variar porque los datos almacenados en la memoria pueden variar.", "... para una combinación de entradas dada, las salidas siempre toman el valor asociado a dicha combinación.", "... para una combinación de entradas dada, las salidas pueden variar porque el circuito combinacional es diferente.", "... para una combinación de entradas dada, las salidas siempre toman el valor asociado porque la memoria no varía."],
+    c: "... para una combinación de entradas dada, las salidas pueden variar porque los datos almacenados en la memoria pueden variar.",
+    e: "A diferencia de los combinacionales, la salida depende del estado almacenado en memoria[cite: 192, 195]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "¿Qué memorias están basadas en las EEPROM que permiten borrarse eléctricamente pero son más densas y baratas?",
+    r: ["Flash.", "ROM.", "SRAM.", "Ninguna es correcta."],
+    c: "Flash.",
+    e: "Las memorias Flash son una evolución de las EEPROM, optimizadas en densidad y coste[cite: 198, 199]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "Si necesitamos una memoria cuya característica principal sea un acceso muy rápido, ¿qué tecnología se ha usado históricamente?",
+    r: ["La semiconductora.", "La auxiliar.", "La magnética.", "El disco duro."],
+    c: "La semiconductora.",
+    e: "La tecnología semiconductora es la que ofrece mayor velocidad de acceso históricamente[cite: 206, 209]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "Describa la arquitectura interna de una ROM que almacena 36 bytes y utiliza un array de registros cuadrado.",
+    r: ["Array de 6x6 registros de 8 bits cada uno.", "Array de 36x36 registros de 8 bits cada uno.", "Array de 6x6 registros de 8 bytes cada uno.", "Array de 12x3 registros de 8 bytes cada uno."],
+    c: "Array de 6x6 registros de 8 bits cada uno.",
+    e: "Un array cuadrado de 36 elementos requiere una matriz de 6x6, cada uno almacenando 8 bits (1 byte)[cite: 211, 212, 213]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "¿Cuál es la característica principal de una EPROM?",
+    r: ["El proceso de borrado se realiza con luz ultravioleta (UV).", "No puede borrarse.", "El proceso de borrado se realiza con corriente eléctrica.", "Se puede borrar solo una parte."],
+    c: "El proceso de borrado se realiza con luz ultravioleta (UV).",
+    e: "Las memorias EPROM se borran exponiendo el chip a luz ultravioleta[cite: 217, 220]."
+},
+{
+    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
+    p: "Una palabra de datos de 32 bits está formada por:",
+    r: ["4 bytes.", "1 byte.", "2 bytes.", "3 bytes."],
+    c: "4 bytes.",
+    e: "Dado que cada byte tiene 8 bits, 32 bits equivalen a 4 bytes[cite: 222, 225]."
+},
+
+
+
 
   // =========================================================================
 // M: 1º CURSO
@@ -333,222 +553,7 @@
     c: "$6 - 16e^{-1}$.",
     e: "Requiere integración por partes sucesiva (3 veces). El resultado evaluado es $6 - 16/e$.",
 },    
-// =========================================================================
-// M: 1º CURSO
-// T: Estructura y Tecnología de Computadores I
-// U: TEST 1
-// =========================================================================
 
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "Indica qué afirmación es falsa con respecto a la arquitectura Harvard:",
-    r: ["Es la más utilizada en los PC. Es lenta pero flexible.", "El tener una memoria de programa y una de datos la hace una arquitectura más estable y con mayor velocidad.", "Los datos y programas se almacenan en dispositivos de memoria independientes y manejados por diferentes subsistemas.", "Consume muchas líneas E/S del procesador, por lo que su coste es mayor."],
-    c: "Es la más utilizada en los PC. Es lenta pero flexible.",
-    e: "La arquitectura más utilizada en PCs es la Von Neumann. La arquitectura Harvard es común en sistemas embebidos y DSPs debido a su mayor velocidad por buses independientes.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "¿Quién creó uno de los primeros computadores electrónicos programables del mundo y trabajó en los algoritmos informáticos?",
-    r: ["Alan Turing.", "Charles Babbage.", "John Atanasoff.", "Ada Lovelace."],
-    c: "Alan Turing.",
-    e: "Turing es considerado uno de los padres de la ciencia de la computación y fue clave en el desarrollo de máquinas programables como Colossus y la Máquina de Turing.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "Un modelo, en el sentido científico del término, es:",
-    r: ["Un conjunto de noticias, informes o datos que nos aportan algún nuevo conocimiento.", "Una representación abstracta, conceptual o gráfica, física o matemática de fenómenos, sistemas o procesos a fin de analizarlos, describirlos, explicarlos, simularlos y predecirlos.", "Un sistema al que se le suministra información en forma de datos para que luego devuelva unos resultados acordes con la resolución de un determinado problema.", "Una secuencia de instrucciones que resuelven determinados problemas planteados."],
-    c: "Una representación abstracta, conceptual o gráfica, física o matemática de fenómenos, sistemas o procesos a fin de analizarlos, describirlos, explicarlos, simularlos y predecirlos.",
-    e: "Esta es la definición formal de modelo en ciencia e ingeniería.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "¿Qué característica de la arquitectura Von Neumann se puede ver como una ventaja, ya que facilita la conexión de memoria externa con una mínima implementación extra de hardware?",
-    r: ["El hecho de tener un solo bus para acceder tanto a datos como a instrucciones.", "El hecho de tener dos buses diferenciados para acceder a datos y a instrucciones.", "El hecho de que la CPU lea la instrucción desde la memoria principal.", "El hecho de tener una ALU que realiza operaciones."],
-    c: "El hecho de tener un solo bus para acceder tanto a datos como a instrucciones.",
-    e: "Al compartir bus para datos e instrucciones, se ahorran líneas de conexión (hardware), aunque genera el 'cuello de botella de Von Neumann'.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "¿Qué componente de la arquitectura Von Neumann se encarga de realizar operaciones con los datos?",
-    r: ["La unidad de control.", "La unidad aritmético-lógica (ALU).", "El bus.", "La memoria."],
-    c: "La unidad aritmético-lógica (ALU).",
-    e: "La ALU es el bloque funcional encargado de realizar operaciones aritméticas (suma, resta) y lógicas (AND, OR, NOT).",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "El número binario 10010001 es igual al número decimal:",
-    r: ["145.", "122.", "-140.", "-12."],
-    c: "145.",
-    e: "Cálculo: $1 \cdot 2^7 + 0 \cdot 2^6 + 0 \cdot 2^5 + 1 \cdot 2^4 + 0 \cdot 2^3 + 0 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 128 + 16 + 1 = 145$.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "La suma binaria 110 + 100 es igual a:",
-    r: ["1010.", "1111.", "0110.", "0011."],
-    c: "1010.",
-    e: "110 (6 en decimal) + 100 (4 en decimal) = 1010 (10 en decimal).",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "El complemento a 2 del número decimal -19 con 8 bits es:",
-    r: ["11101101.", "00110111.", "00110001.", "00111000."],
-    c: "11101101.",
-    e: "1. 19 en binario (8 bits) = 00010011. 2. Invertir bits = 11101100. 3. Sumar 1 = 11101101.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "El número binario 100110011010 puede escribirse en octal como:",
-    r: ["4632₈.", "1402₈.", "3214₈.", "4204₈."],
-    c: "4632₈.",
-    e: "Agrupando de 3 en 3 desde la derecha: (100)(110)(011)(010) -> 4 6 3 2.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "El número binario 111111000101101001 puede escribirse en hexadecimal como:",
-    r: ["3F169₁₆.", "3F142₁₆.", "3F031₁₆.", "3F101₁₆."],
-    c: "3F169₁₆.",
-    e: "Agrupando de 4 en 4 desde la derecha: (0011)(1111)(0001)(0110)(1001) -> 3 F 1 6 9.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "¿Cuál de las siguientes expresiones es una suma de productos?",
-    r: ["AB + AC + AC'.", "(A + B' + C)(A' + B + C).", "B + A'(C + D).", "(A + C)(A + B' + C)."],
-    c: "AB + AC + AC'.",
-    e: "Una suma de productos (SOP) consiste en términos AND sumados mediante puertas OR.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "En un mapa de Karnaugh de 4 variables, un término producto de 2 variables se obtiene de un:",
-    r: ["Grupo de 4 celdas de 1s.", "Grupo de 2 celdas de 1s.", "Grupo de 8 celdas de 1s.", "Grupo de 4 celdas de 0s."],
-    c: "Grupo de 4 celdas de 1s.",
-    e: "En 4 variables: grupo de 1 = 4 vars; grupo de 2 = 3 vars; grupo de 4 = 2 vars; grupo de 8 = 1 var.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "La función F = ABC + ABC' + AB'C + AB'C' + A'B'C' expresada como suma de minitérminos es:",
-    r: ["F = Σ₃(7, 6, 5, 4, 0).", "F = Σ₃(5, 12, 3, 6).", "F = Σ₃(7, 1, 1, 1, 0).", "No puede expresarse así."],
-    c: "F = Σ₃(7, 6, 5, 4, 0).",
-    e: "ABC(7), ABC'(6), AB'C(5), AB'C'(4), A'B'C'(0).",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "Aplicando las leyes de De Morgan, (A + B)' es igual a:",
-    r: ["A' B'.", "A' + B'.", "AB.", "1."],
-    c: "A' B'.",
-    e: "De Morgan: El negado de una suma es el producto de los negados.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "Simplifica la siguiente función mediante mapa de Karnaugh: <br><img src='IMAGEN_DEL_TEST_1_DE_LA_PREGUNTA_15.png' style='width:100%; max-width:300px; display:block; margin:10px auto;'>",
-    r: ["F = AD' + AB'C.", "F = A'B'C' + A'BCD.", "F = ABC + AB'C'D' + A'D + A'BC'.", "F = A'B'C' + A'BCD + AD' + AB'C."],
-    c: "F = AD' + AB'C.",
-    e: "Al agrupar los 1s en el mapa, los grupos resultantes corresponden a los términos AD' y AB'C.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "¿A qué función lógica corresponde la siguiente tabla de verdad? <br><img src='IMAGEN_DEL_TEST_1_DE_LA_PREGUNTA_16.png' style='width:100%; max-width:250px; display:block; margin:10px auto;'>",
-    r: ["F = A'B' + A'B + AB'.", "F = AB' + A'B + AB.", "F = B + A.", "F = AB + A'B."],
-    c: "F = A'B' + A'B + AB'.",
-    e: "La función es 1 cuando (0,0), (0,1) y (1,0). Esto corresponde a (A'B'), (A'B) y (AB') respectivamente (equivalente a una puerta NAND).",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "Los circuitos integrados compuestos por más de 100 puertas están dentro de la escala:",
-    r: ["LSI (large scale of integration).", "MSI (medium scale of integration).", "SSI (small scale of integration).", "VLSI (very large scale of integration)."],
-    c: "LSI (large scale of integration).",
-    e: "SSI (<12), MSI (12-99), LSI (100-9999), VLSI (>10000 puertas).",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "¿Qué función lógica implementa el siguiente circuito? <br><img src='IMAGEN_DEL_TEST_1_DE_LA_PREGUNTA_18.png' style='width:100%; max-width:400px; display:block; margin:10px auto;'>",
-    r: ["F = A'(A' + B)(AB + A' + B).", "F = (AB + B')' + B' + B'(B' + C).", "F = A'(A' + B)(AB + A + B).", "F = A'(A' + B)(AB + A' + B)'."],
-    c: "F = A'(A' + B)(AB + A' + B).",
-    e: "Siguiendo las puertas desde las entradas A y B: la primera rama es A', la segunda (A'+B) y la tercera la combinación OR de AB y A'+B, todas unidas por una AND final.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "Los dispositivos MSI son clasificados en diferentes familias, indica cuál de los siguientes NO pertenece a una de ellas:",
-    r: ["Dispositivos de entrada-salida.", "Dispositivos aritmético-lógicos.", "Dispositivos comparadores.", "Dispositivos de camino de datos."],
-    c: "Dispositivos de entrada-salida.",
-    e: "Las familias MSI principales son: Combinacionales (sumadores, comparadores, etc.) y de Camino de Datos (multiplexores, decodificadores).",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "Un circuito lógico con una salida AB'C + AC' consta de:",
-    r: ["Dos puertas AND, una puerta OR y dos inversores.", "Dos puertas AND y una puerta OR.", "Dos puertas OR, una puerta AND y dos inversores.", "Dos puertas AND, una puerta OR y un inversor."],
-    c: "Dos puertas AND, una puerta OR y dos inversores.",
-    e: "Necesitas una AND para (A·B'·C), otra AND para (A·C'), una OR para sumarlas, y dos inversores para obtener B' y C'.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "¿Qué biestable es especialmente útil cuando se desea almacenar un único bit?",
-    r: ["Biestable D.", "Biestable RS.", "Biestable JK.", "Biestable universal."],
-    c: "Biestable D.",
-    e: "El biestable D (Data) captura el valor de la entrada y lo mantiene, ideal para memorias y registros de 1 bit.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "A partir de la siguiente tabla de estados de un circuito secuencial síncrono: <br><img src='IMAGEN_DEL_TEST_1_DE_LA_PREGUNTA_22.png' style='width:100%; max-width:400px; display:block; margin:10px auto;'>",
-    r: ["Cuando el sistema está en el estado B y la señal de entrada vale 1, pasaremos al estado D con salida 0.", "Cuando el sistema está en el estado D y la señal de entrada vale 1, pasaremos al estado B con salida 0.", "Cuando el sistema está en el estado D y la señal de entrada vale 1, pasaremos al estado B con salida 1.", "Cuando el sistema está en el estado B y la señal de entrada vale 0, pasaremos al estado D con salida 0."],
-    c: "Cuando el sistema está en el estado B y la señal de entrada vale 1, pasaremos al estado D con salida 0.",
-    e: "En la fila B, columna 1, se lee 'D,0', lo que significa: Próximo estado D, Salida 0.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "Los registros de desplazamiento paralelo-serie tienen:",
-    r: ["Accesibles las entradas de todos los biestables, pero únicamente la salida del último.", "Accesible únicamente la entrada del primer biestable y la salida del último.", "Accesibles las salidas de todos los biestables, pero únicamente la entrada del primero.", "Accesible únicamente la entrada del primer biestable."],
-    c: "Accesibles las entradas de todos los biestables, pero únicamente la salida del último.",
-    e: "Cargan todos los bits a la vez (paralelo) y los expulsan uno tras otro por el final (serie).",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "¿En qué biestable al activarse sus 2 entradas simultáneamente se cambia de estado?",
-    r: ["Biestable JK.", "Biestable RS.", "Biestable D.", "No existe ningún biestable con esa característica."],
-    c: "Biestable JK.",
-    e: "Cuando J=1 y K=1, el biestable JK realiza la función 'toggle' (basculación), invirtiendo el estado actual.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "En los circuitos secuenciales...",
-    r: ["... para una combinación de entradas dada, las salidas pueden variar porque los datos almacenados en la memoria pueden variar.", "... para una combinación de entradas dada, las salidas siempre toman el valor asociado a dicha combinación.", "... para una combinación de entradas dada, las salidas pueden variar porque el circuito combinacional es diferente.", "... para una combinación de entradas dada, las salidas siempre toman el valor asociado porque la memoria no varía."],
-    c: "... para una combinación de entradas dada, las salidas pueden variar porque los datos almacenados en la memoria pueden variar.",
-    e: "La salida en un circuito secuencial depende de las entradas actuales y del estado anterior (memoria).",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "¿Qué memorias están basadas en las EEPROM que permiten borrarse eléctricamente pero son más densas y baratas?",
-    r: ["Flash.", "ROM.", "SRAM.", "Ninguna es correcta."],
-    c: "Flash.",
-    e: "La memoria Flash es una evolución de la EEPROM que permite el borrado de bloques de celdas, siendo más eficiente para grandes capacidades.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "Si necesitamos una memoria cuya característica principal sea un acceso muy rápido, ¿qué tecnología se ha usado históricamente?",
-    r: ["La semiconductora.", "La auxiliar.", "La magnética.", "El disco duro."],
-    c: "La semiconductora.",
-    e: "Las memorias de semiconductores (RAM, Caché) son órdenes de magnitud más rápidas que las magnéticas o mecánicas.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "Describa la arquitectura interna de una ROM que almacena 36 bytes y utiliza un array de registros cuadrado.",
-    r: ["Array de 6x6 registros de 8 bits cada uno.", "Array de 36x36 registros de 8 bits cada uno.", "Array de 6x6 registros de 8 bytes cada uno.", "Array de 12x3 registros de 8 bytes cada uno."],
-    c: "Array de 6x6 registros de 8 bits cada uno.",
-    e: "Raíz cuadrada de 36 es 6. Cada registro almacena 1 byte (8 bits). Por tanto, 6 filas x 6 columnas.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "¿Cuál es la característica principal de una EPROM?",
-    r: ["El proceso de borrado se realiza con luz ultravioleta (UV).", "No puede borrarse.", "El proceso de borrado se realiza con corriente eléctrica.", "Se puede borrar solo una parte."],
-    c: "El proceso de borrado se realiza con luz ultravioleta (UV).",
-    e: "EPROM significa Erasable Programmable Read-Only Memory, y se distingue por tener una 'ventana' de cuarzo para borrarla con luz UV.",
-},
-{
-    m: "1º CURSO", t: "Estructura y Tecnología de Computadores I", u: "TEST 1",
-    p: "Una palabra de datos de 32 bits está formada por:",
-    r: ["4 bytes.", "1 byte.", "2 bytes.", "3 bytes."],
-    c: "4 bytes.",
-    e: "Como 1 byte = 8 bits, entonces 32 / 8 = 4 bytes.",
-},
 
 // =========================================================================
     // PEGUNTAS   
