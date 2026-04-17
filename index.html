@@ -464,6 +464,243 @@
     r: ["... vértices internos.", "... nodo origen del árbol.", "... nodos con hijos.", "... nodos sin hijos."],
     c: "... nodos sin hijos.",
     e: "En la terminología de árboles, los nodos que no tienen descendencia (hijos) se denominan hojas."
+},
+
+// =========================================================================
+// M: 1º CURSO
+// T: Matemática Discreta y Álgebra
+// U: EXAMEN ORDINARIO 1
+// =========================================================================
+
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Un sistema de ecuaciones lineales con infinitas soluciones es...",
+    r: ["un sistema compatible determinado.", "un sistema compatible indeterminado.", "un sistema incompatible.", "un sistema incompatible indeterminado."],
+    c: "un sistema compatible indeterminado.",
+    e: "Por definición, un sistema con infinitas soluciones se clasifica siempre como compatible indeterminado (SCI)."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Sea la matriz ampliada de un sistema de ecuaciones lineales con el parámetro m: $\\begin{pmatrix} 1 & 1 & 2 & 1 & 2 \\\\ 0 & 1 & 1 & 2 & 0 \\\\ 0 & 0 & m-4 & 0 & 0 \\end{pmatrix}$ (asumiendo la representación estándar), señala la opción verdadera:",
+    r: ["Si m=4, el sistema es compatible indeterminado.", "Si m=4 el sistema es incompatible.", "Si m=4, el sistema es compatible determinado.", "Si m!=4 el sistema es incompatible."],
+    c: "Si m=4 el sistema es incompatible.",
+    e: "Si m=4, el pivote de la última fila se anula. Dependiendo de los términos independientes omitidos en el enunciado original, el rango de la matriz ampliada sería mayor, resultando en un Sistema Incompatible."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Siendo A y B matrices invertibles, con inversas $A^{-1}$ y $B^{-1}$, señala cuál es la solución de la siguiente ecuación matricial: $A\\cdot X\\cdot B - C = D$",
+    r: ["$X = A^{-1}\\cdot B^{-1}\\cdot(D+C)$", "$X = (D+C)\\cdot A^{-1}\\cdot B^{-1}$", "$X = A^{-1}\\cdot(D+C)\\cdot B^{-1}$", "$X = C + A^{-1}\\cdot D\\cdot B^{-1}$"],
+    c: "$X = A^{-1}\\cdot(D+C)\\cdot B^{-1}$",
+    e: "Para despejar X: primero sumamos C a ambos lados ($A\\cdot X\\cdot B = D+C$), luego multiplicamos por $A^{-1}$ por la izquierda y por $B^{-1}$ por la derecha, respetando estrictamente el orden."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Clasifica el siguiente sistema en compatible determinado (SCD), compatible indeterminado (SCI) o incompatible (SI): $\\begin{cases} 3\\cdot x+y=3 \\\\ x-4\\cdot y=5 \\end{cases}$",
+    r: ["Sistema compatible determinado (SCD).", "Sistema compatible indeterminado (SCI).", "Sistema incompatible (SI).", "Es imposible saberlo."],
+    c: "Sistema compatible determinado (SCD).",
+    e: "El determinante de la matriz de coeficientes es $(3\\cdot-4) - (1\\cdot1) = -13 \\neq 0$. Al ser distinto de cero, el sistema tiene una solución única (SCD)."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Calcula la inversa de la matriz $A = \\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$",
+    r: ["$\\begin{pmatrix} 1 & -1 \\\\ 0 & 1 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 0 \\\\ -1 & 1 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 0 \\\\ 1 & 1 \\end{pmatrix}$"],
+    c: "$\\begin{pmatrix} 1 & -1 \\\\ 0 & 1 \\end{pmatrix}$",
+    e: "El determinante es 1. Al calcular la matriz adjunta y transponerla, el elemento de la esquina superior derecha cambia de signo."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "De los siguientes vectores: $v_1=(1, 4, 1)$, $v_2=(1, -4, -1)$ y $v_3=(3, 3, 1)$, ¿cuál es tiene/n mayor módulo?",
+    r: ["$v_1, v_2$", "$v_1, v_2, v_3$", "$v_2, v_3$", "$v_3$"],
+    c: "$v_3$",
+    e: "Calculamos los módulos al cuadrado: $|v_1|^2 = 1+16+1=18$; $|v_2|^2 = 1+16+1=18$; $|v_3|^2 = 9+9+1=19$. Por tanto, $v_3$ es el mayor."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Halla el valor de k para que los vectores (k, 4) y (2, 2) sean ortogonales:",
+    r: ["$k = -4$", "$k = 4$", "$k = 3$", "$k = -3$"],
+    c: "$k = -4$",
+    e: "Dos vectores son ortogonales si su producto escalar es 0. Hacemos $(k \\cdot 2) + (4 \\cdot 2) = 2k + 8 = 0 \\implies k = -4$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Los vectores (0, 1, 0), (1, 1, 0) y (0, 1, 1) son:",
+    r: ["Ortonormales.", "Linealmente dependientes.", "Linealmente independientes.", "Ortogonales."],
+    c: "Linealmente independientes.",
+    e: "Si formamos una matriz con ellos y calculamos su determinante, el resultado es -1 (distinto de cero), por lo que son linealmente independientes."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "El coseno del ángulo entre los vectores (-1, -2) y (2, 1) vale...",
+    r: ["4/5", "3/5", "-3/5", "-4/5"],
+    c: "-4/5",
+    e: "El producto escalar es $(-1)(2) + (-2)(1) = -4$. El módulo de ambos es $\\sqrt{1+4}=\\sqrt{5}$. El coseno es $\\frac{-4}{\\sqrt{5}\\cdot\\sqrt{5}} = -4/5$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Sabiendo que los vectores $\\vec{v}=\\vec{PQ}$ y $\\vec{w}=\\vec{QP}$ son $\\vec{v}=(1, 4)$ y $\\vec{w}=(-1, -4)$, los puntos P y Q pueden ser:",
+    r: ["P=(0, 2) y Q=(1, 6).", "P=(3, 7) y Q=(1, 2).", "P=(-1, -2) y Q=(3, 7).", "P=(3, 7) y Q=(-1, -7)."],
+    c: "P=(0, 2) y Q=(1, 6).",
+    e: "El vector $\\vec{PQ}$ se calcula como $Q - P$. Comprobando la primera opción: $(1-0, 6-2) = (1, 4)$, que coincide con el vector $\\vec{v}$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "¿Con qué transformación se corresponde la siguiente matriz? $A = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$",
+    r: ["Reflexión sobre el eje X.", "Reflexión sobre el eje Y.", "Proyección sobre el eje X.", "Proyección sobre el eje Y."],
+    c: "Reflexión sobre el eje X.",
+    e: "Al multiplicar esta matriz por un punto genérico $(x,y)$, el resultado es $(x, -y)$, lo que mantiene la X pero invierte la Y (actuando el eje X como espejo)."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Señala la opción verdadera. Una transformación lineal $T: V \\rightarrow W$ donde $\\dim(V) > \\dim(W)$...",
+    r: ["podrá ser biyectiva si $\\dim(Ker(T)) > 0$.", "podrá ser biyectiva si $\\dim(Ker(T)) = 0$.", "podrá ser biyectiva si $\\dim(Im(T)) = \\dim(W)$.", "nunca podrá ser biyectiva."],
+    c: "nunca podrá ser biyectiva.",
+    e: "Por el teorema de las dimensiones: $\\dim(Ker) = \\dim(V) - \\dim(Im)$. Al ser V mayor que el espacio de destino W, el núcleo (Ker) nunca será 0, por lo que nunca será inyectiva y, en consecuencia, nunca biyectiva."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Indica cuál de los siguientes conjuntos son conjuntos de vectores ortonormales:",
+    r: [
+        "$Q_1 = \\{ (1/\\sqrt{6}, 1/\\sqrt{6}, -1/\\sqrt{6}), (1/\\sqrt{2}, 0, 1/\\sqrt{2}) \\}$",
+        "$Q_2 = \\{ (1/\\sqrt{3}, 1/\\sqrt{3}, -1/\\sqrt{3}), (1/\\sqrt{2}, 0, 1/\\sqrt{2}) \\}$",
+        "$Q_3 = \\{ (1/\\sqrt{6}, 1/\\sqrt{6}, -1/\\sqrt{6}), (1/\\sqrt{6}, 0, 1/\\sqrt{6}) \\}$",
+        "$Q_4 = \\{ (1/\\sqrt{6}, 1/\\sqrt{6}, 1/\\sqrt{6}), (1/\\sqrt{6}, 0, 1/\\sqrt{6}) \\}$"
+    ],
+    c: "$Q_2 = \\{ (1/\\sqrt{3}, 1/\\sqrt{3}, -1/\\sqrt{3}), (1/\\sqrt{2}, 0, 1/\\sqrt{2}) \\}$",
+    e: "Para ser ortonormales deben tener módulo 1 y producto escalar 0. Solo el conjunto $Q_2$ cumple ambas cosas: $\\sqrt{1/3+1/3+1/3} = 1$ y su producto escalar da $(1/\\sqrt{6}) + 0 - (1/\\sqrt{6}) = 0$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Sea la transformación lineal $T: \\mathbb{R}^2 \\rightarrow \\mathbb{R}^2$, definida por $T(x,y)=(x+y, x-y)$, ¿cuál es la matriz asociada a T?",
+    r: [
+        "$T(\\vec{v}) = \\begin{pmatrix} 1 & 1 \\\\ -1 & 1 \\end{pmatrix} \\cdot \\vec{v}$",
+        "$T(\\vec{v}) = \\begin{pmatrix} -1 & 1 \\\\ 1 & 1 \\end{pmatrix} \\cdot \\vec{v}$",
+        "$T(\\vec{v}) = \\begin{pmatrix} 1 & 1 \\\\ 1 & -1 \\end{pmatrix} \\cdot \\vec{v}$",
+        "$T(\\vec{v}) = \\begin{pmatrix} 1 & -1 \\\\ 1 & 1 \\end{pmatrix} \\cdot \\vec{v}$"
+    ],
+    c: "$T(\\vec{v}) = \\begin{pmatrix} 1 & 1 \\\\ 1 & -1 \\end{pmatrix} \\cdot \\vec{v}$",
+    e: "Las columnas de la matriz se forman sacando los coeficientes de X e Y: la primera fila será (1, 1) y la segunda (1, -1)."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Sea la transformación $T: V \\rightarrow W$ tal que $T(v_1, v_2) = (v_1-v_2, v_1-3v_2)$. La preimagen del vector $w=(-2, 2)$ es...",
+    r: ["(-4, -8)", "(-4, 4)", "(-4, 2)", "(-4, -2)"],
+    c: "(-4, -2)",
+    e: "Resolviendo el sistema: $v_1 - v_2 = -2$ y $v_1 - 3v_2 = 2$. Restando la segunda a la primera nos queda $2v_2 = -4 \\implies v_2 = -2$. Sustituyendo, $v_1 = -4$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Una matriz tiene autovalores 1 y 3. Si las multiplicidades algebraicas de los autovalores son $a(1)=1$ y $a(3)=3$, la ecuación característica es...",
+    r: ["$(x+1)\\cdot(x+3)^3=0$", "$(x+1)\\cdot(x+3)^3$", "$(x-1)\\cdot(x-3)^3=0$", "$(x-1)\\cdot(x-3)^3$"],
+    c: "$(x-1)\\cdot(x-3)^3=0$",
+    e: "La ecuación característica consiste en igualar el polinomio a cero. Además, si las raíces son 1 y 3, los factores deben llevar el signo opuesto: $(x-1)^1 \\cdot (x-3)^3 = 0$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "De los siguientes vectores, ¿cuáles son linealmente dependientes de $(1, -3)$? $v_1=(-2, 6)$, $v_2=(-1, 3)$, $v_3=(2, -6)$, $v_4=(2, 6)$.",
+    r: ["$v_1, v_2$", "$v_1, v_2, v_3, v_4$", "$v_1, v_2, v_4$", "$v_1, v_2, v_3$"],
+    c: "$v_1, v_2, v_3$",
+    e: "Son dependientes si son proporcionales a $(1, -3)$. Al multiplicar este vector por -2, -1 y 2 obtenemos $v_1, v_2$ y $v_3$. El $v_4$ no cumple la proporción."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Sabiendo que los autovalores de una matriz $4\\times4$ son $\\lambda_1=\\lambda_2=6$, $\\lambda_3=12$ y $\\lambda_4=12$, ¿cuál de las siguientes afirmaciones es válida?",
+    r: ["$a(6)=1$ y $a(12)=1$", "$a(6)=2$ y $a(12)=1$", "$a(6)=2$ y $a(12)=2$", "No se dispone de información suficiente."],
+    c: "$a(6)=2$ y $a(12)=2$",
+    e: "La multiplicidad algebraica ($a(\\lambda)$) indica cuántas veces aparece cada autovalor como raíz del polinomio. En este caso, ambos autovalores aparecen 2 veces."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "¿Cuál de los siguientes vectores es autovector de la siguiente matriz para el autovalor $\\lambda=1$? $A = \\begin{pmatrix} 3 & 2 \\\\ 2 & 3 \\end{pmatrix}$",
+    r: ["(-2, -2)", "(2, -2)", "(1, 3)", "(-1, 3)"],
+    c: "(2, -2)",
+    e: "Para que sea autovector, al multiplicar $(A - I)\\cdot \\vec{v}$ debe dar 0. Esto nos deja con el sistema $2x+2y=0 \\implies x=-y$. El vector $(2,-2)$ es el único que cumple esta relación."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "¿Cuáles son los autovalores de la siguiente matriz? $A = \\begin{pmatrix} 7 & 4 \\\\ -2 & 1 \\end{pmatrix}$",
+    r: ["-3 y 5", "-3 y -5", "3 y -5", "3 y 5"],
+    c: "3 y 5",
+    e: "Calculamos el polinomio $|A - \\lambda I| = (7-\\lambda)(1-\\lambda) - (-8) = \\lambda^2 - 8\\lambda + 15 = 0$. Sus raíces resolviendo la ecuación son 3 y 5."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "El resto de la división $3^{82} : 5$ es...",
+    r: ["1", "2", "3", "4"],
+    c: "4",
+    e: "Usando el Pequeño Teorema de Fermat, sabemos que $3^4 \\equiv 1 \\pmod 5$. Como $82 = 4\\cdot20 + 2$, simplificamos $3^{82}$ a $3^2 \\pmod 5$. Y $3^2 = 9 \\equiv 4 \\pmod 5$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Si $a \\equiv b \\pmod m$ y $c \\equiv d \\pmod m$, ¿cuáles de las siguientes expresiones son siempre verdadera/s? 1. $a+c \\equiv b+d \\pmod m$. 2. $a-c \\equiv b-d \\pmod m$. 3. $a\\cdot c \\equiv b\\cdot d \\pmod m$. 4. $a/c \\equiv b/d \\pmod m$.",
+    r: ["1 y 2.", "3 y 4.", "1, 2 y 3.", "Todas ellas: 1, 2, 3 y 4."],
+    c: "1, 2 y 3.",
+    e: "La suma, resta y multiplicación de congruencias respetan siempre la equivalencia modular. La división no siempre es válida a menos que los divisores sean coprimos con el módulo."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Señala la única expresión falsa en $\\mathbb{Z}_7$ (módulo 7):",
+    r: ["$[2]^{-1} = 4$", "$[3]^{-1} = 5$", "$[4]^{-1} = 2$", "$[5]^{-1} = 4$"],
+    c: "$[5]^{-1} = 4$",
+    e: "El inverso multiplicativo debe dar como resto 1 al multiplicarlo. $5 \\cdot 4 = 20 \\equiv 6 \\pmod 7$, por lo tanto, la afirmación de que 4 es el inverso de 5 es falsa."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "¿Cuál es la solución del siguiente sistema de congruencias lineales? $\\begin{cases} 5\\cdot x \\equiv 6 \\pmod 7 \\\\ x \\equiv 1 \\pmod 5 \\end{cases}$",
+    r: ["$x=26+35\\cdot t$ con $t \\in \\mathbb{Z}$.", "$x=11+35\\cdot t$ con $t \\in \\mathbb{Z}$.", "$x=16+35\\cdot t$ con $t \\in \\mathbb{Z}$.", "$x=6+35\\cdot t$ con $t \\in \\mathbb{Z}$."],
+    c: "$x=11+35\\cdot t$ con $t \\in \\mathbb{Z}$.",
+    e: "De la primera $5x \\equiv 6 \\implies x \\equiv 4 \\pmod 7$. Con $x \\equiv 4 \\pmod 7$ y $x \\equiv 1 \\pmod 5$, aplicando el Teorema Chino del Resto para módulo 35 (7x5) la única solución es $x=11+35t$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "La solución de la congruencia lineal $5\\cdot x \\equiv 7 \\pmod{11}$ es:",
+    r: ["$x=6+11\\cdot t$ con $t \\in \\mathbb{Z}$", "$x=7+11\\cdot t$ con $t \\in \\mathbb{Z}$", "$x=8+11\\cdot t$ con $t \\in \\mathbb{Z}$", "$x=9+11\\cdot t$ con $t \\in \\mathbb{Z}$"],
+    c: "$x=8+11\\cdot t$ con $t \\in \\mathbb{Z}$",
+    e: "El inverso multiplicativo de 5 módulo 11 es 9 (ya que $45 \\equiv 1$). Si multiplicamos toda la ecuación por 9, queda $x \\equiv 63 \\equiv 8 \\pmod{11}$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Si hablamos de un grafo donde los vértices se pueden dividir en dos grupos, y no existe ninguna arista entre dos vértices del mismo grupo, hablamos de un grafo...",
+    r: ["lineal.", "circular.", "completo.", "bipartito."],
+    c: "bipartito.",
+    e: "Es la definición teórica de los grafos bipartitos: los nodos se dividen en dos conjuntos independientes y solo hay aristas que cruzan de un conjunto al otro."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "¿Cuántas aristas tiene el grafo completo de 6 vértices $K_6$?",
+    r: ["5", "6", "10", "15"],
+    c: "15",
+    e: "En cualquier grafo completo, el número de aristas se obtiene combinando todos los nodos 2 a 2 mediante la fórmula $n(n-1)/2$. Para $n=6$, resulta en $30/2 = 15$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "¿Cuál es la idea central del algoritmo de Kruskal?",
+    r: [
+        "Hacer crecer un árbol desde un origen eligiendo siempre la menor distancia tentativa.",
+        "Ordenar aristas por peso creciente y agregarlas a los vértices evitando ciclos hasta tener un árbol con $n-1$ aristas.",
+        "Buscar caminos aumentantes en la red y actualizar la capacidad total.",
+        "Obtener las potencias de la matriz de adyacencias para detectar conectividad entre aristas."
+    ],
+    c: "Ordenar aristas por peso creciente y agregarlas a los vértices evitando ciclos hasta tener un árbol con $n-1$ aristas.",
+    e: "El algoritmo de Kruskal encuentra el Árbol Recubridor Mínimo ordenando siempre por peso de arista y descartando las que formarían bucles cerrados."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "Dado el siguiente grafo, ¿cuántas aristas tiene su grafo complementario? <br><img src='https://raw.githubusercontent.com/Esmeraldapr/INGENIERIA-INFORMATICA/main/IMAGEN_MAT_DISCRETA_ORD_1_GRAFO.png' style='width:100%; max-width:300px; display:block; margin:10px auto;'>",
+    r: ["8", "6", "4", "2"],
+    c: "4",
+    e: "El grafo actual de 5 vértices tiene 6 aristas. Su versión completa ($K_5$) tendría 10 aristas ($5\\cdot4/2$). Por lo tanto, le faltan $10 - 6 = 4$ aristas para completarse (ese es su grafo complementario)."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "EXAMEN ORDINARIO 1",
+    p: "¿Cuál es la matriz de adyacencia del siguiente grafo? <br><img src='https://raw.githubusercontent.com/Esmeraldapr/INGENIERIA-INFORMATICA/main/IMAGEN_MAT_DISCRETA_ORD_1_GRAFO.png' style='width:100%; max-width:300px; display:block; margin:10px auto;'>",
+    r: [
+        "$\\begin{pmatrix} 0 & 1 & 0 & 1 & 0 \\\\ 1 & 0 & 1 & 1 & 1 \\\\ 0 & 1 & 0 & 1 & 1 \\\\ 1 & 1 & 1 & 0 & 0 \\\\ 0 & 1 & 1 & 0 & 0 \\end{pmatrix}$",
+        "$\\begin{pmatrix} 0 & 1 & 0 & 1 & 0 \\\\ 1 & 0 & 1 & 0 & 1 \\\\ 0 & 1 & 0 & 1 & 1 \\\\ 1 & 0 & 1 & 0 & 1 \\\\ 0 & 1 & 1 & 1 & 0 \\end{pmatrix}$",
+        "$\\begin{pmatrix} 0 & 1 & 0 & 1 & 0 \\\\ 1 & 0 & 1 & 0 & 1 \\\\ 0 & 1 & 0 & 1 & 1 \\\\ 1 & 0 & 1 & 0 & 0 \\\\ 0 & 1 & 1 & 0 & 0 \\end{pmatrix}$",
+        "$\\begin{pmatrix} 1 & 1 & 0 & 1 & 0 \\\\ 1 & 0 & 1 & 0 & 1 \\\\ 0 & 1 & 0 & 1 & 1 \\\\ 1 & 0 & 1 & 0 & 0 \\\\ 0 & 1 & 1 & 0 & 1 \\end{pmatrix}$"
+    ],
+    c: "$\\begin{pmatrix} 0 & 1 & 0 & 1 & 0 \\\\ 1 & 0 & 1 & 0 & 1 \\\\ 0 & 1 & 0 & 1 & 1 \\\\ 1 & 0 & 1 & 0 & 0 \\\\ 0 & 1 & 1 & 0 & 0 \\end{pmatrix}$",
+    e: "Observando los enlaces, por ejemplo el nodo 1 conecta solo con 2 y 4 (fila 1: 0 1 0 1 0). El nodo 4 conecta solo con 1 y 3 (fila 4: 1 0 1 0 0). Estas relaciones únicas coinciden con la tercera matriz."
 }
 // =========================================================================
 // M: 1º CURSO
