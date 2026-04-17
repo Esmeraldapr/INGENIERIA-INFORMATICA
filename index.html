@@ -125,7 +125,145 @@
 <script>
    const misPreguntas = [
 
+// =========================================================================
+// M: 1º CURSO
+// T: Matemática Discreta y Álgebra
+// U: TEST 1
+// =========================================================================
 
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Calcula el siguiente determinante: $\\begin{vmatrix} 2 & 3 \\\\ 4 & 4 \\end{vmatrix}$",
+    r: ["0", "-8", "4", "-4"],
+    c: "-4",
+    e: "El determinante se calcula cruzando las diagonales: $2 \\cdot 4 - 4 \\cdot 3 = -4$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dada la matriz $A = \\begin{pmatrix} 3 & 0 \\\\ 1 & 3 \\end{pmatrix}$ ¿Cuál es el elemento $m_{11}$ de la matriz inversa de A?",
+    r: ["1/12", "1/3", "1/6", "1/9"],
+    c: "1/3",
+    e: "La inversa es $\\frac{1}{9}\\begin{pmatrix} 3 & 0 \\\\ -1 & 3 \\end{pmatrix}$. El elemento $m_{11}$ resulta ser $3/9 = 1/3$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "¿Qué tipo de sistema es el siguiente? $\\begin{cases} 2\\cdot x + y = 3 \\\\ 8\\cdot x + 12\\cdot y = 16 \\end{cases}$",
+    r: ["Sistema Compatible Determinado", "Ninguna de las otras", "Sistema Compatible Indeterminado", "Sistema Incompatible"],
+    c: "Sistema Compatible Determinado",
+    e: "Si a la segunda ecuación le restamos 4 veces la primera, nos quedamos con el sistema equivalente donde $8\\cdot y = 4$. Al tener solución única, es Compatible Determinado."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dado el sistema de ecuaciones lineales siguiente $\\begin{cases} 2\\cdot x + y = 16 \\\\ -6\\cdot x - 3\\cdot y = -48 \\end{cases}$ su expresión matricial será:",
+    r: ["$\\begin{pmatrix} -6 & 1 \\\\ 2 & 1 \\end{pmatrix} \\cdot \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 16 \\\\ -48 \\end{pmatrix}$", "$\\begin{pmatrix} 2 & 1 \\\\ -6 & -3 \\end{pmatrix} \\cdot \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 16 \\\\ -48 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 2 \\\\ -3 & -6 \\end{pmatrix} \\cdot \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 16 \\\\ -48 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & -3 \\\\ 2 & -6 \\end{pmatrix} \\cdot \\begin{pmatrix} y \\\\ x \\end{pmatrix} = \\begin{pmatrix} 16 \\\\ -48 \\end{pmatrix}$"],
+    c: "$\\begin{pmatrix} 2 & 1 \\\\ -6 & -3 \\end{pmatrix} \\cdot \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 16 \\\\ -48 \\end{pmatrix}$",
+    e: "La representación matricial es $A \\cdot X = B$, donde A es la matriz de los coeficientes escritos en el orden exacto de las ecuaciones."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Un sistema de ecuaciones se dice Incompatible si:",
+    r: ["Tiene infinitas soluciones.", "No tiene solución.", "Tiene un única solución.", "Tiene dos soluciones."],
+    c: "No tiene solución.",
+    e: "Los sistemas de ecuaciones lineales que no tienen solución se denominan Incompatibles."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dados los vectores de $\\mathbb{R}^3$, $\\vec{v} = (1, 2, 4)$ y $\\vec{w} = (2, 3, 2)$. ¿Cuál es el módulo de $\\vec{v}$?",
+    r: ["5,00", "4,58", "5,20", "4,80"],
+    c: "4,58",
+    e: "El módulo se calcula sumando el cuadrado de sus componentes y haciendo la raíz: $||\\vec{v}|| = \\sqrt{1^2 + 2^2 + 4^2} = \\sqrt{21} \\approx 4,58$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dados los vectores de $\\mathbb{R}^3$, $\\vec{v} = (1, 2, 4)$ y $\\vec{w} = (2, 3, 2)$. ¿Cuál es el módulo de $\\vec{w}$?",
+    r: ["4,36", "3,87", "4,12", "4,58"],
+    c: "4,12",
+    e: "El módulo se calcula: $||\\vec{w}|| = \\sqrt{2^2 + 3^2 + 2^2} = \\sqrt{17} \\approx 4,12$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dados los vectores de $\\mathbb{R}^3$, $\\vec{v} = (1, 2, 4)$ y $\\vec{w} = (2, 3, 2)$. ¿Cuál es el producto escalar $\\vec{v} \\cdot \\vec{w}$?",
+    r: ["20", "16", "22", "18"],
+    c: "16",
+    e: "El producto escalar se calcula multiplicando y sumando componente a componente: $1\\cdot2 + 2\\cdot3 + 4\\cdot2 = 16$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dados los vectores de $\\mathbb{R}^3$, $\\vec{v} = (1, 2, 4)$ y $\\vec{w} = (2, 3, 2)$. ¿Cuál es el ángulo, en radianes, que forman?",
+    r: ["0,561 radianes", "0,761 radianes", "0,361 radianes", "0,961 radianes"],
+    c: "0,561 radianes",
+    e: "Aplicamos $\\cos(\\alpha) = \\frac{\\vec{v} \\cdot \\vec{w}}{||\\vec{v}|| \\cdot ||\\vec{w}||} = \\frac{16}{\\sqrt{21}\\cdot\\sqrt{17}} \\approx 0,847$. Usando el arcocoseno, $\\alpha \\approx 0,561$ radianes."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dados los vectores de $\\mathbb{R}^3$, $\\vec{v} = (1, 2, 4)$ y $\\vec{w} = (2, 3, 2)$. ¿Cuál es el producto vectorial $\\vec{v} \\times \\vec{w}$?",
+    r: ["(-8, 7, -2)", "(-7, 7, -1)", "(-8, 6, -1)", "(-8, 7, 1)"],
+    c: "(-8, 6, -1)",
+    e: "Se calcula mediante el determinante de la matriz con los vectores unitarios i, j, k en la primera fila: resulta en $(-8, 6, -1)$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Tres vectores cualesquiera serán linealmente independientes si:",
+    r: ["El determinante asociado a la matriz que forman tales tres vectores es nulo.", "Podemos expresar uno de ellos como combinación lineal de los otros dos.", "El rango de la matriz que forman los tres vectores dados vale 3.", "El rango de la matriz que conforman los tres vectores dados es menor o igual a 2."],
+    c: "El rango de la matriz que forman los tres vectores dados vale 3.",
+    e: "Colocando los vectores en forma de matriz, si el rango es igual al número de vectores (tres), significa que son linealmente independientes."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dados dos vectores de $\\mathbb{R}^3$, el valor absoluto de su producto escalar es:",
+    r: ["Mayor que el producto de sus módulos.", "Menor o igual que el producto de sus módulos.", "Igual a la suma de sus módulos.", "Menor que la suma de sus módulos."],
+    c: "Menor o igual que el producto de sus módulos.",
+    e: "Dado que el valor absoluto del coseno está acotado entre 0 y 1, $|\\vec{v} \\cdot \\vec{w}| \\le ||\\vec{v}|| \\cdot ||\\vec{w}||$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "¿Cuál es la preimagen del vector (2, -2) en la transformación $T(x, y) = (x - y, x - 3\\cdot y)$?",
+    r: ["(4, 2)", "(4, -8)", "(4, 8)", "(-2, -4)"],
+    c: "(4, 2)",
+    e: "Se resuelve el sistema: $x - y = 2$ y $x - 3y = -2$. La solución es $x=4$, $y=2$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "La transformación lineal $T: \\mathbb{R}^3 \\rightarrow \\mathbb{R}^3$ definida por $T(x, y, z) = (x - y, y - z, x + y + z)$ ...",
+    r: ["... es sobreyectiva.", "... es inyectiva.", "... es biyectiva.", "... realmente no es una transformación lineal."],
+    c: "... es biyectiva.",
+    e: "El Ker(T) tiene dimensión 0 (es inyectiva) y la dimensión de la Im(T) es 3, que coincide con el espacio de destino (es sobreyectiva)."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dada la transformación lineal $T: \\mathbb{R}^4 \\rightarrow \\mathbb{R}^3$ tal que $T(x, y, z, t) = (2\\cdot x, y - z, x + t)$, ¿Cuál es su matriz asociada?",
+    r: ["$\\begin{pmatrix} 2 & 0 & 1 \\\\ 0 & 1 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$", "$\\begin{pmatrix} 2 & 0 & 0 & 0 \\\\ 0 & 1 & -1 & 0 \\\\ 1 & 0 & 0 & 1 \\end{pmatrix}$", "$\\begin{pmatrix} 1 & 0 & 2 \\\\ 0 & 1 & 0 \\\\ 0 & -1 & 0 \\\\ 1 & 0 & 0 \\end{pmatrix}$", "$\\begin{pmatrix} 2 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 \\\\ 1 & 1 & 0 & 1 \\end{pmatrix}$"],
+    c: "$\\begin{pmatrix} 2 & 0 & 0 & 0 \\\\ 0 & 1 & -1 & 0 \\\\ 1 & 0 & 0 & 1 \\end{pmatrix}$",
+    e: "Se colocan en tres filas distintas los coeficientes que acompañan a cada variable (x, y, z, t)."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dada la transformación lineal $T: \\mathbb{R}^4 \\rightarrow \\mathbb{R}^3$ tal que $T(x, y, z, t) = (2\\cdot x, y - z, x + t)$, ¿Cuál es la imagen de (1, 0, 2, 1)?",
+    r: ["(2, -2, 2)", "(2, 2, 2)", "(2, 0, 2)", "(1, -1, 1)"],
+    c: "(2, -2, 2)",
+    e: "Sustituyendo obtenemos: $(2\\cdot1, 0-2, 1+1) = (2, -2, 2)$."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dada la transformación lineal $T: \\mathbb{R}^4 \\rightarrow \\mathbb{R}^3$ tal que $T(x, y, z, t) = (2\\cdot x, y - z, x + t)$, ¿Cuál es la dimensión de $\\text{Im}(T)$?",
+    r: ["1", "4", "3", "2"],
+    c: "3",
+    e: "Calculando el rango de la matriz asociada (escalonando por filas), se obtiene que el rango es 3."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dada la transformación lineal $T: \\mathbb{R}^4 \\rightarrow \\mathbb{R}^3$ tal que $T(x, y, z, t) = (2\\cdot x, y - z, x + t)$, ¿Cuál es la dimensión del $\\text{Ker}(T)$?",
+    r: ["3", "2", "4", "1"],
+    c: "1",
+    e: "Por el teorema de las dimensiones: dim(origen) = dim(Im(T)) + dim(Ker(T)). Siendo el origen $\\mathbb{R}^4$ (dim 4) y la imagen dim 3, el Ker(T) es 1."
+},
+{
+    m: "1º CURSO", t: "Matemática Discreta y Álgebra", u: "TEST 1",
+    p: "Dada la transformación lineal $T: \\mathbb{R}^4 \\rightarrow \\mathbb{R}^3$ tal que $T(x, y, z, t) = (2\\cdot x, y - z, x + t)$, ¿Qué tipo de aplicación es?",
+    r: ["Sobreyectiva.", "Inyectiva.", "Biyectiva.", "Ni inyectiva ni sobreyectiva."],
+    c: "Sobreyectiva.",
+    e: "Es sobreyectiva porque la dimensión de la Imagen es 3, que coincide con la dimensión del espacio vectorial de destino ($\\mathbb{R}^3$)."
+},
 
 // =========================================================================
 // M: 1º CURSO
