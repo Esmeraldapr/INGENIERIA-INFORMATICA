@@ -1173,9 +1173,9 @@
 {
     m: "2º CURSO", t: "Inteligencia Artificial", u: "EXAMEN ORDINARIO 2017",
     p: "La representación en lógica proposicional de la frase 'No es cierto que fuera a trabajar y llevara traje' es:",
-    r: ["$\\neg(P \\wedge Q)$", "$\\neg P \\wedge \\neg Q$", "$\\neg P \\vee \\neg Q$", "$P \\wedge \\neg Q$"],
-    c: "$\\neg(P \\wedge Q)$",
-    e: "Si P = 'fuera a trabajar' y Q = 'llevara traje', la conjunción 'y' agrupa ambas acciones ($P \\wedge Q$). Al decir 'No es cierto que...', se niega la proposición completa: $\\neg(P \\wedge Q)$."
+    r: ["¬(P ∧ Q)", "¬P ∧ ¬Q", "¬P ∨ ¬Q", "P ∧ ¬Q"],
+    c: "¬(P ∧ Q)",
+    e: "Si P = 'fuera a trabajar' y Q = 'llevara traje', la conjunción 'y' agrupa ambas acciones (P ∧ Q). Al decir 'No es cierto que...', se niega la proposición completa: ¬(P ∧ Q)."
 },
 {
     m: "2º CURSO", t: "Inteligencia Artificial", u: "EXAMEN ORDINARIO 2017",
@@ -1472,11 +1472,11 @@
     e: "El conocimiento declarativo suele dividirse en relacional, heredable e inferible. El conocimiento 'inductivo' hace referencia más bien a un método de razonamiento o aprendizaje (inducción), no a una estructura de representación declarativa[cite: 3036, 3039]."
 },
 {
-    m: "2º CURSO", t: "Inteligencia Artificial", u: "EXAMEN EXTRAORDINARIO 2018",
+    m: "2º CURSO", t: "Inteligencia Artificial", u: "EXAMEN ORDINARIO 2018",
     p: "«Fui al fútbol, aunque no fui en coche». La representación mediante lógica proposicional de la afirmación es:",
-    r: ["$(P\\vee\\neg Q)$", "$(\\neg P\\wedge\\neg Q)$", "$(P\\wedge\\neg Q)$", "$(\\neg P\\vee\\neg Q)$"],
-    c: "$(P\\wedge\\neg Q)$",
-    e: "Si P = 'Fui al fútbol' y Q = 'Fui en coche'. La partícula 'aunque' actúa lógicamente como una conjunción (AND o $\\wedge$). Por tanto, P y NO Q se representa como $P \\wedge \\neg Q$[cite: 3045, 3048]."
+    r: ["(P ∨ ¬Q)", "(¬P ∧ ¬Q)", "(P ∧ ¬Q)", "(¬P ∨ ¬Q)"],
+    c: "(P ∧ ¬Q)",
+    e: "Si P = 'Fui al fútbol' y Q = 'Fui en coche'. La partícula 'aunque' actúa lógicamente como una conjunción (AND o ∧). Por tanto, P y NO Q se representa como P ∧ ¬Q."
 },
 {
     m: "2º CURSO", t: "Inteligencia Artificial", u: "EXAMEN EXTRAORDINARIO 2018",
@@ -2452,6 +2452,373 @@
     ],
     c: "Sistemas inteligentes que son eficientes en tareas repetitivas con bajos índices de error.",
     e: "Desde una perspectiva industrial y de IA, los robots son agentes físicos o virtuales programados para ejecutar tareas precisas de forma automática y constante."
+},
+
+// =========================================================================
+// M: 2º CURSO
+// T: Diseño y Programación Orientada a Objetos
+// U: EXAMEN ORDINARIO 1
+// =========================================================================
+
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Los comentarios en Java:",
+    r: [
+        "Están limitados por el lenguaje.",
+        "Permiten crear documentación en HTML como JavaDoc.",
+        "Permiten crear documentación en JSON como JavaDoc.",
+        "Ninguna de las anteriores es correcta."
+    ],
+    c: "Permiten crear documentación en HTML como JavaDoc.",
+    e: "En Java, además de los comentarios normales (// o /* */), existen los comentarios de documentación (/** */) que la herramienta JavaDoc utiliza para generar automáticamente páginas HTML con la documentación del código."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "La introducción de datos en Java se puede realizar utilizando:",
+    r: [
+        "System.in.",
+        "La clase IO.",
+        "Desde línea de comandos.",
+        "Todas las anteriores son correctas."
+    ],
+    c: "Todas las anteriores son correctas.",
+    e: "En Java puedes introducir datos leyendo el flujo estándar (System.in), utilizando las clases del paquete java.io, o pasándolos como argumentos (String[] args) desde la línea de comandos al ejecutar el programa."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "En Java, la gestión de la memoria:",
+    r: [
+        "Se realiza de forma automática.",
+        "Es responsabilidad del programador.",
+        "Depende del número de punteros que se creen.",
+        "No permite la creación de referencias a objetos."
+    ],
+    c: "Se realiza de forma automática.",
+    e: "A diferencia de C o C++, en Java no tienes que liberar memoria manualmente. El Recolector de Basura (Garbage Collector) se encarga de forma automática de liberar la memoria de los objetos que ya no están referenciados."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Dado el siguiente código:<br><pre>public class IdentifyMyParts {\n  public static int x = 7;\n  public int y = 3;\n  public static void main(String[] args) {\n    IdentifyMyParts a = new IdentifyMyParts();\n    IdentifyMyParts b = new IdentifyMyParts();\n    a.y = 5;\n    b.y = 6;\n    a.x = 1;\n    b.x = 2;\n    System.out.println(\"a.y=\" + a.y);\n    System.out.println(\"b.y=\" + b.y);\n    System.out.println(\"IdentifyMyParts.x=\" + IdentifyMyParts.x);\n  }\n}</pre>",
+    r: [
+        "La salida es la siguiente: a.y=5, b.y=6, IdentifyMyParts.x=2",
+        "La salida es la siguiente: a.y=5, b.y=6, IdentifyMyParts.x=1",
+        "La salida es la siguiente: a.y=5, b.y=6, IdentifyMyParts.x=3",
+        "Ninguna de las anteriores."
+    ],
+    c: "La salida es la siguiente: a.y=5, b.y=6, IdentifyMyParts.x=2",
+    e: "La variable 'y' es de instancia (cada objeto tiene la suya, por lo que a.y es 5 y b.y es 6). La variable 'x' es estática (compartida por todos). Cuando haces b.x=2, sobreescribes el valor anterior (1). Por tanto, IdentifyMyParts.x vale 2."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "La programación orientada a objetos:",
+    r: [
+        "Dificulta la reutilización de código.",
+        "Une las operaciones y los datos.",
+        "No permite la protección de datos.",
+        "No permite encapsulación para poder permitir la herencia."
+    ],
+    c: "Une las operaciones y los datos.",
+    e: "El principio fundamental de la POO es el encapsulamiento: agrupar en una misma entidad (la clase/objeto) tanto los datos (atributos) como las operaciones que actúan sobre ellos (métodos)."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Un objeto:",
+    r: [
+        "Es otra forma de llamar a una clase.",
+        "Es una instancia de una clase.",
+        "Solo puede pertenecer a una clase.",
+        "Tiene la misma identidad que otros objetos de su clase."
+    ],
+    c: "Es una instancia de una clase.",
+    e: "La clase es el 'molde' o la plantilla, y un objeto es una 'instancia' materializada a partir de ese molde en la memoria durante la ejecución del programa."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "En la programación orientada a objetos:",
+    r: [
+        "Una clase posee una parte pública y otra privada.",
+        "Dos métodos de una clase no pueden compartir el mismo nombre.",
+        "Las operaciones tienen que especificarse de manera separada.",
+        "No pueden declararse atributos de clase."
+    ],
+    c: "Una clase posee una parte pública y otra privada.",
+    e: "Por el principio de ocultación de información, una clase divide su contenido en una interfaz pública (lo que otros pueden usar) y una implementación privada (datos o métodos ocultos)."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "En relación con Java:",
+    r: [
+        "Es una versión mejorada de JavaScript.",
+        "Se trata de un lenguaje de marcas como HTML.",
+        "Es un lenguaje independiente de la plataforma.",
+        "Permite generar archivos ejecutables .EXE para Windows."
+    ],
+    c: "Es un lenguaje independiente de la plataforma.",
+    e: "Java se compila en un 'bytecode' intermedio que es ejecutado por la Máquina Virtual de Java (JVM). Esto le otorga su famosa característica WORA ('Write Once, Run Anywhere')."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "A partir de dos cadenas, \"cadenaA\" y \"cadenaB\", ¿qué sentencia es la correcta para comparar el contenido de ambas cadenas?",
+    r: [
+        "if (cadenaA = cadenaB){...}",
+        "if (cadenaA == cadenaB){...}",
+        "if (cadenaA.equals(cadenaB)){...}",
+        "if (cadenaA == cadenaB){...} y if (cadenaA.equals(cadenaB)){...}, sin distinción entre ambas."
+    ],
+    c: "if (cadenaA.equals(cadenaB)){...}",
+    e: "En Java, usar '==' compara si dos objetos ocupan el mismo espacio de memoria (referencias). Para comparar si el TEXTO que contienen dos Strings es el mismo, siempre se debe usar el método .equals()."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Para comprobar que el contenido de una variable numérica entera (valor) esté dentro del rango de 1 a 20, ambos extremos incluidos, deberíamos utilizar la instrucción:",
+    r: [
+        "if(valor>=1 || valor>=20)",
+        "if(valor<=1 && valor>=20)",
+        "if(valor>=1 && valor<=20)",
+        "if(valor<0 || valor>=20)"
+    ],
+    c: "if(valor>=1 && valor<=20)",
+    e: "Se requiere un operador lógico AND (&&). La condición se lee: 'Si el valor es mayor o igual a 1 Y el valor es menor o igual a 20'."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Las variables cuyo tipo es una clase referencian:",
+    r: [
+        "Valores de tipos básicos.",
+        "Objetos.",
+        "Clases.",
+        "Objetos, clases y valores de tipos básicos."
+    ],
+    c: "Objetos.",
+    e: "En Java existen dos tipos de variables: las primitivas (int, boolean, etc.) que guardan valores básicos, y las de tipo Referencia (clases, interfaces, arrays) que apuntan o 'referencian' a Objetos en la memoria."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Una clase define:",
+    r: [
+        "Solamente atributos.",
+        "Solamente métodos.",
+        "Atributos y métodos.",
+        "Interfaces."
+    ],
+    c: "Atributos y métodos.",
+    e: "Una clase encapsula tanto el estado (atributos o variables) como el comportamiento (métodos o funciones)."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "En Java, la partícula this permite:",
+    r: [
+        "Mejorar la encapsulación.",
+        "Ampliar la herencia.",
+        "Evitar colisiones de nombres.",
+        "Resolver problemas de ejecución."
+    ],
+    c: "Evitar colisiones de nombres.",
+    e: "La palabra reservada 'this' hace referencia al objeto actual. Se utiliza principalmente para evitar la ambigüedad cuando un parámetro de un método se llama igual que un atributo de la clase (ej. this.nombre = nombre)."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Si declaramos un atributo \"protected int b;\" en una clase llamada ClassP (sin métodos set ni get) y declaramos una clase ClassH que extiende a la anterior y en la que dicho atributo no está declarado explícitamente, indica cuál de las siguientes afirmaciones es correcta:",
+    r: [
+        "Es imposible modificar el atributo b desde los métodos de ClassH.",
+        "Podemos modificar el atributo b desde los métodos de ClassP.",
+        "Para poder acceder al atributo b desde los métodos de ClassH, tenemos que usar obligatoriamente métodos setter y getter.",
+        "Para poder acceder al atributo b desde los métodos de ClassH, tenemos que usar obligatoriamente la palabra reservada super."
+    ],
+    c: "Podemos modificar el atributo b desde los métodos de ClassP.",
+    e: "Al ser 'protected', el atributo es accesible directamente tanto por la propia clase (ClassP) como por sus clases hijas (ClassH) o las del mismo paquete. Por tanto, es cierto que se puede modificar desde ClassP, y es falso que sea 'imposible' o que 'obligue' al uso de getters o super desde ClassH."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Cuando se crean dos objetos, para compararlos se utiliza:",
+    r: [
+        "El operador \"==\".",
+        "El operador \"=\".",
+        "El método equals.",
+        "No se pueden comparar objetos."
+    ],
+    c: "El método equals.",
+    e: "Si utilizamos '==' estaremos comparando si las dos variables apuntan a la misma dirección de memoria. Para comparar si sus atributos o contenido son iguales lógicamente, se usa el método .equals()."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Respecto a las interfaces en Java, ¿qué afirmación es falsa?",
+    r: [
+        "Las interfaces pueden definir constantes.",
+        "Las interfaces pueden definir el cuerpo de los métodos.",
+        "Los nombres de las interfaces se pueden utilizar como un nuevo tipo a la hora de declarar referencias.",
+        "Las interfaces se pueden utilizar como valor de retorno de un método."
+    ],
+    c: "Las interfaces pueden definir el cuerpo de los métodos.",
+    e: "En el paradigma clásico de POO, las interfaces son puramente abstractas y solo declaran la firma de los métodos sin implementar su cuerpo (aunque en versiones recientes de Java se introdujeron los métodos 'default', académicamente la definición de cuerpo se reserva a las clases)."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Un método abstracto:",
+    r: [
+        "Es aquel método que ha sido declarado en una clase abstracta.",
+        "Es el que no tiene argumentos de ningún tipo.",
+        "Es el que usa única y exclusivamente clases abstractas en sus parámetros.",
+        "Establece cómo debe ser la cabecera que deben implementar las clases no abstractas que lo hereden."
+    ],
+    c: "Establece cómo debe ser la cabecera que deben implementar las clases no abstractas que lo hereden.",
+    e: "Un método abstracto no tiene cuerpo (llaves). Solo define su firma o cabecera para obligar a cualquier clase hija concreta a proporcionar la implementación real."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Dados dos métodos en la misma clase y con el mismo nombre, pero con distintos argumentos:",
+    r: [
+        "El programa no compila, porque una clase no puede tener más de un método con el mismo nombre.",
+        "El segundo método declarado sobreescribe o redefine al primero, y así sucesivamente.",
+        "Dada una invocación, el entorno de Java examina el tipo del parámetro de la llamada para decidir cuál de los dos métodos ejecutar.",
+        "Esa situación puede darse, pero solo si se trata de un método constructor."
+    ],
+    c: "Dada una invocación, el entorno de Java examina el tipo del parámetro de la llamada para decidir cuál de los dos métodos ejecutar.",
+    e: "Esta característica se conoce como 'Sobrecarga de métodos' (Overloading). El compilador diferencia qué método ejecutar fijándose en la cantidad y el tipo de los argumentos que se le pasan."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Si declaramos un atributo como aparece en el siguiente código en una clase llamada ClassA, sin método setter, indica cuál de las siguientes afirmaciones es correcta:<br><code>public final int b;</code>",
+    r: [
+        "Se puede modificar el atributo b desde otra clase utilizando esta línea de código: ClassA.b = 3;",
+        "Es necesario crear previamente un objeto de la clase ClassA para poder modificar su atributo b.",
+        "No es posible modificar el atributo b por ser una constante.",
+        "No es posible modificar el atributo b por no tener método setter."
+    ],
+    c: "No es posible modificar el atributo b por ser una constante.",
+    e: "La palabra reservada 'final' aplicada a una variable la convierte en una constante. Esto significa que una vez se le asigne un valor (normalmente en el constructor), ya no podrá modificarse en toda la ejecución del programa."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "De la clase Mensaje heredan las subclases SMS, Email y MMS. ¿De qué clase debe ser la variable x para que el siguiente código funcione?<br><code>x = new SMS(\"A\", 14); x.greeting();<br>x = new Email(\"B\"); x.greeting();<br>x = new MMS(\"C\", 12); x.greeting();</code>",
+    r: [
+        "De la clase Mensaje.",
+        "De cualquiera de las tres clases instanciadas (Email, SMS o MMS).",
+        "Es inevitable que haya un error de compilación, porque x no puede referenciar a objetos de clases distintas.",
+        "Es inevitable que haya un error de ejecución, porque no se puede saber qué método exacto se ha de ejecutar."
+    ],
+    c: "De la clase Mensaje.",
+    e: "Gracias al 'Polimorfismo', una variable de tipo Padre (Mensaje) puede referenciar a objetos de cualquiera de sus clases Hijas (SMS, Email, MMS) sin dar error."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Dado el siguiente código:<br><code>try {<br>} catch(FileNotFoundException fnte) {<br>}</code>",
+    r: [
+        "Se capturan todas las excepciones que se produzcan dentro del bloque try.",
+        "No se captura ninguna excepción.",
+        "Se capturan las excepciones que pertenezcan a la clase FileNotFoundException y sus derivadas.",
+        "Se capturan las excepciones que pertenezcan a la clase FileNotFoundException."
+    ],
+    c: "Se capturan las excepciones que pertenezcan a la clase FileNotFoundException y sus derivadas.",
+    e: "El bloque catch captura la excepción especificada (FileNotFoundException) y, gracias a la herencia en Java, también interceptará automáticamente cualquier otra excepción que herede o derive de ella."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "En cuanto al bloque finally en Java, ¿qué afirmación es la correcta?",
+    r: [
+        "Si se utiliza el bloque catch, no se puede utilizar el bloque finally.",
+        "Pueden existir varios bloques finally para un bloque try.",
+        "El bloque finally siempre debe ser el último, situándose después de los bloques try y catch.",
+        "El bloque finally solo se ejecuta cuando no se ha identificado la excepción que se ha lanzado."
+    ],
+    c: "El bloque finally siempre debe ser el último, situándose después de los bloques try y catch.",
+    e: "La estructura correcta de manejo de errores es try -> catch -> finally. El bloque finally va siempre al final y su código se ejecuta siempre, haya saltado una excepción o no (ideal para cerrar archivos o conexiones)."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "La existencia de excepciones en Java:",
+    r: [
+        "Genera que el lenguaje sea menos seguro desde el punto de vista del control de finalización inesperada.",
+        "Hace que el lenguaje sea más seguro desde el punto de vista del control de finalización inesperada.",
+        "No influye en las formas de finalizar los programas.",
+        "Hace que el programa funcione de forma más eficiente y rápida."
+    ],
+    c: "Hace que el lenguaje sea más seguro desde el punto de vista del control de finalización inesperada.",
+    e: "Las excepciones obligan al programador a prever y controlar los errores (file not found, divisiones por cero, etc.) evitando que el programa 'crashee' y se cierre de forma descontrolada."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Cuando se captura una excepción:",
+    r: [
+        "Siempre debe realizarse su tratamiento en el método donde se ha capturado.",
+        "Puede ser relanzada.",
+        "Debe informarse siempre al usuario.",
+        "Se ejecuta a continuación el bloque try."
+    ],
+    c: "Puede ser relanzada.",
+    e: "Dentro de un bloque catch, puedes manejar el error, o puedes optar por utilizar la palabra 'throw' para 'relanzar' la excepción hacia un nivel superior del programa para que sea tratada allí."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Dado el siguiente código, elige la opción correcta:<br><code>public void miMetodo() throws Exception {<br>  try {<br>  } catch(FileNotFoundException e) {<br>  }<br>}</code>",
+    r: [
+        "Define el método miMetodo para que pueda lanzar una excepción.",
+        "Define el método miMetodo para que pueda lanzar una excepción FileNotFoundException.",
+        "Dentro del método miMetodo no se capturan excepciones.",
+        "La clase que utilice el método miMetodo no debe capturar ninguna excepción."
+    ],
+    c: "Define el método miMetodo para que pueda lanzar una excepción.",
+    e: "La cláusula 'throws Exception' en la firma o cabecera del método sirve para avisar a quien lo utilice de que la ejecución de este método es susceptible de lanzar (propagar) una excepción hacia arriba."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "El paquete java.lang:",
+    r: [
+        "Contiene operaciones esenciales, como la entrada/salida.",
+        "Se importa por defecto.",
+        "Contiene clases para ejecutar applets.",
+        "Contiene las operaciones matemáticas complejas."
+    ],
+    c: "Se importa por defecto.",
+    e: "El paquete java.lang contiene las clases más fundamentales de Java (como String, Math, Integer o System). Al ser de uso tan común, el compilador lo importa automáticamente en todos los archivos sin necesidad de escribir un 'import'."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "En JDBC:",
+    r: [
+        "Las columnas almacenadas en un resultSet se pueden recorrer con el método next().",
+        "Las filas almacenadas en un resultSet se pueden recorrer con el método getString().",
+        "El número de columnas no se puede conocer sin haber leído la primera fila.",
+        "Las columnas almacenadas en un resultSet se pueden recorrer con el método getString()."
+    ],
+    c: "Las columnas almacenadas en un resultSet se pueden recorrer con el método getString().",
+    e: "Mientras que el método next() se utiliza para avanzar o recorrer las FILAS, los métodos getXXX() (como getString, getInt, etc.) se utilizan para acceder y recorrer las COLUMNAS de la fila en la que te encuentras."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "La serialización de un objeto:",
+    r: [
+        "Es necesaria solo cuando se va a escribir en un archivo.",
+        "Permite convertir un objeto en un set de bytes.",
+        "No produce excepciones.",
+        "En Java no es posible, sí en otros lenguajes."
+    ],
+    c: "Permite convertir un objeto en un set de bytes.",
+    e: "Serializar un objeto es el proceso de transformar el estado de un objeto de la memoria en una secuencia o flujo de bytes, lo cual permite guardarlo en un fichero, enviarlo por red, etc."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "La persistencia en Java:",
+    r: [
+        "Está muy limitada a JPA.",
+        "Es poco segura.",
+        "No se ofrece de manera nativa por el lenguaje.",
+        "Dispone de múltiples implementaciones en diferentes frameworks."
+    ],
+    c: "Dispone de múltiples implementaciones en diferentes frameworks.",
+    e: "El ecosistema Java es muy rico en persistencia de datos y cuenta con implementaciones muy variadas mediante múltiples frameworks, como Hibernate, MyBatis, Spring Data, JPA, etc."
+},
+{
+    m: "2º CURSO", t: "Diseño y Programación Orientada a Objetos", u: "EXAMEN ORDINARIO 1",
+    p: "Para recuperar los datos de una consulta:",
+    r: [
+        "Se utiliza el método execute.",
+        "Se ejecuta el método executeQuery.",
+        "Se ejecuta el método executeNonQuery.",
+        "Se crea una conexión de recuperación de datos."
+    ],
+    c: "Se ejecuta el método executeQuery.",
+    e: "En la interfaz Statement de JDBC, el método executeQuery() se usa específicamente para enviar sentencias SELECT a la base de datos y recuperar sus datos mediante un objeto ResultSet."
 },
 
 // =========================================================================
